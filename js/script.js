@@ -22,9 +22,7 @@ document.addEventListener('mousewheel', (event) =>
         $page.classList.toggle('transition')
 
         // changing slides in function of the transition
-        if(changeSlide == $content.offsetWidth * 4 && event.deltaY > 0)
-        {        }
-        else
+        if(changeSlide != $content.offsetWidth * 4 || event.deltaY <= 0)
         {
             $page.classList.toggle('transition')
             if(event.deltaY > 0)
@@ -41,9 +39,8 @@ document.addEventListener('mousewheel', (event) =>
                 }
             }
         }
-        if(changeSlide == 0 && event.deltaY < 0)
-        {        }
-        else
+
+        if(changeSlide != 0 || event.deltaY >= 0)
         {
             $page.classList.toggle('transition')
             if(event.deltaY < 0)
@@ -176,3 +173,22 @@ loop()
 createStars()
 
 /* End script JS */
+
+/* start timeline */
+const $tlTimeline = document.querySelector('.tl-timeline')
+const $tlRocket = document.querySelector('.tl-rocket')
+const timelineWidth = $tlTimeline.offsetWidth
+
+document.addEventListener('mousewheel', () => 
+{
+    if(changeSlide == 0)
+    {
+        $tlRocket.style.transform = `translate(35px, 518px)`
+    }
+    if(changeSlide == $content.offsetWidth)
+    {
+        $tlRocket.style.transform = `translate(${timelineWidth / 2}px, 518px)`
+    }
+
+})
+/* end timeline */

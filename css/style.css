@@ -15,31 +15,31 @@ body
     height: 100%;
 }
 
-.grey
+.first
 {
     background-color: lightgray;
     position: absolute;
     transform: translateX(0%)
 }
-.red
+.second
 {
     background-color: red;
     position: absolute;
     transform: translateX(100%)
 }
-.blue
+.third
 {
     background-color: blue;
     position: absolute;
     transform: translateX(200%)
 }
-.green
+.fourth
 {
     background-color: green;
     position: absolute;
     transform: translateX(300%)
 }
-.yellow
+.fifth
 {
     background-color: yellow;
     position: absolute;
@@ -60,12 +60,13 @@ body
 {
     width: 155%;
     height: 100%;
-    background-color: white;
+    background-color: #f1f1f1;
     z-index: 10;
     position: fixed; 
     transform: translateX(-75%) skew(-20deg);
     will-change: transform;
     transition: transform 2s ease; 
+    /* border-radius: 20%; */
 }
 
 .transition
@@ -134,8 +135,6 @@ canvas {
     background: white;
 }
 
-.clouds div:nth-child() {}
-
 @keyframes planetBounce {
     0% {
         transform: translateY(0)
@@ -146,3 +145,55 @@ canvas {
 }
 
 /* Earth CSS end */
+
+/* timeline start */
+.tl-start, .tl-end
+{
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: pink;
+}
+
+.tl-start
+{
+    transform: translate(500px, 500px)
+}
+
+.tl-end
+{
+    transform: translate(10px, 500px)
+}
+
+.tl-timeline
+{
+    position: absolute;
+    width: 490px;
+    height: 10px;
+    background-color: purple;
+    transform: translate(35px, 520px)
+}
+
+.tl-rocket
+{
+    background-color: grey;
+    position: absolute;
+    width: 75px;
+    height: 15px;
+    transform: translate(35px, 518px);
+    transition: transform 1s ease;
+    will-change: transform;
+}
+
+.tl-all
+{
+    position: fixed;
+    z-index: 20;
+}
+
+.tl-mid
+{
+    transform: translateX(50%)
+}
+
+/* timeline end */
