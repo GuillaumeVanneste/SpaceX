@@ -1,4 +1,48 @@
-body
-{
-    background: red;
+body {
+    overflow: hidden;
+}
+
+canvas {
+    background: black;
+}
+
+.planet {
+    width: 25vw;
+    height: 25vw;
+    border-radius: 100%;
+    overflow: hidden;
+}
+
+.planet.earth {
+    position: absolute;
+    top: 35%;
+    left: 25%;
+    box-shadow: 0 0 15vw 2vw rgba(10, 82, 104, 0.76);
+    animation: planetBounce 2s ease-in-out infinite alternate-reverse;
+}
+
+.planet img {
+    width: 100%;
+    height: 100%;
+}
+
+.clouds {
+    position: absolute;
+}
+
+.clouds div {
+    width: 2vw;
+    height: 2vw;
+    background: white;
+}
+
+.clouds div:nth-child() {}
+
+@keyframes planetBounce {
+    0% {
+        transform: translateY(0)
+    }
+    100% {
+        transform: translateY(0.7vw)
+    }
 }
