@@ -16,9 +16,22 @@ canvas {
 .planet.earth {
     position: absolute;
     top: 35%;
-    left: 25%;
+    z-index: 2;
+    left: 55%;
+    border-radius: 100%;
     box-shadow: 0 0 15vw 2vw rgba(10, 82, 104, 0.76);
     animation: planetBounce 2s ease-in-out infinite alternate-reverse;
+}
+
+.planet.earth .boxShadow {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border-radius: 100%;
+    box-shadow: inset -4vw -4vw 4vw 1vw rgba(0, 0, 0, 0.83);
 }
 
 .planet img {
@@ -52,6 +65,7 @@ canvas {
     height: 2.5vw;
     border-radius: 100%;
     background: white;
+    animation: test 3s ease-in-out infinite alternate-reverse;
 }
 
 .clouds .cloud::after {
@@ -63,41 +77,37 @@ canvas {
     height: 2.75vw;
     border-radius: 100%;
     background: white;
+    animation: test 3s ease-in-out infinite alternate-reverse;
 }
 
 .clouds div:nth-child(1) {
-    left: -9vw;
-    top: 11vw;
-    transform: rotateZ(30deg)scale(2.5, 2);
+    left: -16vw;
+    top: 7vw;
     animation: cloud1 7s linear infinite;
 }
 
 .clouds div:nth-child(2) {
     left: -6vw;
     top: 0vw;
-    transform: rotateZ(30deg)scale(1, 1);
     animation: cloud2 8s linear infinite;
 }
 
 .clouds div:nth-child(3) {
-    left: -2vw;
-    top: 2vw;
-    transform: rotateZ(30deg)scale(1, 1.5);
+    left: 2vw;
+    top: -2vw;
     animation: cloud3 6s linear infinite;
 }
 
 .clouds div:nth-child(4) {
     left: -5vw;
     top: 4vw;
-    transform: rotateZ(30deg)scale(1, 1.5);
-    animation: cloud4 4s linear infinite;
+    animation: cloud4 5s linear infinite;
 }
 
 .clouds div:nth-child(5) {
     left: 5vw;
     top: -4vw;
-    transform: rotateZ(30deg)scale(0.5, 0.5);
-    animation: cloud5 5s linear infinite;
+    animation: cloud5 5.5s linear infinite;
 }
 
 @keyframes planetBounce {
@@ -111,10 +121,10 @@ canvas {
 
 @keyframes cloud1 {
     0% {
-        transform: translate(0, 0)rotateZ(30deg)scale(2.5, 2)
+        transform: translate(0, 0)rotateZ(30deg)scale(2.5, 2.5)
     }
     100% {
-        transform: translate(25vw, 25vw)rotateZ(30deg)scale(2.5, 2);
+        transform: translate(25vw, 25vw)rotateZ(30deg)scale(2.5, 2.5);
     }
 }
 
@@ -129,10 +139,10 @@ canvas {
 
 @keyframes cloud3 {
     0% {
-        transform: translate(0, 0)rotateZ(30deg)scale(1, 1.5)
+        transform: translate(0, 0)rotateZ(30deg)scale(1.5, 1.5)
     }
     100% {
-        transform: translate(25vw, 25vw)rotateZ(30deg)scale(1, 1.5);
+        transform: translate(25vw, 25vw)rotateZ(30deg)scale(1.5, 1.5);
     }
 }
 
@@ -147,9 +157,18 @@ canvas {
 
 @keyframes cloud5 {
     0% {
-        transform: translate(0, 0)rotateZ(30deg)scale(1.5, 1.5)
+        transform: translate(0, 0)rotateZ(30deg)scale(0.75, 0.75)
     }
     100% {
-        transform: translate(25vw, 25vw)rotateZ(30deg)scale(1.5, 1.5)
+        transform: translate(25vw, 25vw)rotateZ(30deg)scale(0.75, 0.75)
+    }
+}
+
+@keyframes test {
+    0% {
+        transform: scale(1, 1)
+    }
+    100% {
+        transform: scale(1.5, 1.5)
     }
 }
