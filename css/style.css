@@ -1,4 +1,44 @@
 body
 {
-    background: red;
+    overflow: hidden;
+}
+
+canvas
+{
+    background: black;
+}
+
+/******************
+
+    PLANET
+
+******************/
+
+.planet
+{
+    width: 25vw;
+    height: 25vw;
+    border-radius: 50%;
+}
+
+.planet.mars
+{
+    position: absolute;
+    top: 30%;
+    left: 25%;
+    box-shadow: 0 0 8vw 2vw rgba(143, 22, 22, 0.62);
+    animation: planetBounce 2s ease-in-out infinite alternate-reverse
+}
+
+.planet img
+{
+    width: 100%;
+    height: 100%;
+}
+
+
+@keyframes planetBounce
+{
+    0% {transform: translateY(0)}
+    100% {transform: translateY(0.7vw)}
 }
