@@ -90,11 +90,13 @@ header.header
 
 h1.title
 {
+    position: absolute;
     text-align: center;
+    top: 20%;
+    left: 50%;
 	color: #E9E9E9;
-    font-size: 2.5vw;
-    margin-top: 80px;
-    padding: 0 15vw
+    font-size: 2rem;
+    transform: translateX(-50%)
 }
 
 h1.title span
@@ -104,15 +106,19 @@ h1.title span
 
 .discover
 {
-    margin-top: 300px;
-    z-index: 1
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%);
+
 }
 
 .discover p
 {
     text-align: center;
     color: #EB0000;
-    font-size: 24px
+    font-size: 1.2rem;
+    margin-bottom: 60px;
 }
 
 /*** PLANET ***/
@@ -155,6 +161,101 @@ h1.title span
     100% {transform: translateY(0.7vw)}
 }
 
+.planet.mars .boxShadow {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 101%;
+    top: 0;
+    left: 0;
+    border-radius: 100%;
+    box-shadow: inset -4vw -1vw 6vw 0vw rgba(0, 0, 0, 0.83);
+}
+
+.clouds {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.clouds .cloud .c1 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform: rotateZ(30deg);
+    opacity: 1;
+    box-shadow: 0 2vw 0.5vw rgba(7, 7, 7, 0.3);
+    animation: cloud 1234s linear infinite, marsCloudOpacity 8s ease-in infinite alternate;
+}
+
+.clouds .cloud .c3 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: -3%;
+    border-radius: 100%;
+    transform: rotateZ(30deg);
+    opacity: 0.5;
+    box-shadow: 0 2vw 1vw rgba(7, 7, 7, 0.3);
+    animation: cloud2 1000s linear infinite, marsCloud2Opacity 8s ease-in infinite alternate;
+}
+
+@keyframes planetBounce {
+    0% {
+        transform: translateY(0)
+    }
+    100% {
+        transform: translateY(0.5vw)
+    }
+}
+
+@keyframes cloud {
+    0% {
+        transform: rotateZ(30deg)scale(1.5, 1.5);
+    }
+    50% {
+        transform: rotateZ(165deg)scale(1.5, 1.5);
+    }
+    100% {
+        transform: rotateZ(360deg)scale(1.5, 1.5);
+    }
+}
+
+@keyframes cloud2 {
+    0% {
+        transform: rotateZ(30deg)scale(1.5, 1.5);
+    }
+    100% {
+        transform: rotateZ(-330deg)scale(1.5, 1.5);
+    }
+}
+
+@keyframes marsCloudOpacity {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0.2;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes marsCloud2Opacity {
+    0% {
+        opacity: 0.25;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0.15;
+    }
+}
+
 /**** Progress ****/
 
 .progressBar
@@ -162,10 +263,10 @@ h1.title span
     position: absolute;
     top: 92%;
     left: 50%;
-    width: 200px;
+    width: 50%;
     height: 1px;
     background: #ffffff;
-    transform: translate(-50%)
+    transform: translateX(-50%)
 }
 
 .progressBar .checkpoints

@@ -21,7 +21,7 @@ $checkpoint1.addEventListener('mousedown', () =>
 
 $checkpoint2.addEventListener('mousedown', () =>
 {
-    $checkpoint2.classList.add('isActive')
+    $checkpoint1.classList.add('isActive')
     $checkpoint2.classList.add('isActive')
     $checkpoint3.classList.remove('isActive')
     $checkpoint4.classList.remove('isActive')
@@ -30,7 +30,7 @@ $checkpoint2.addEventListener('mousedown', () =>
 
 $checkpoint3.addEventListener('mousedown', () =>
 {
-    $checkpoint3.classList.add('isActive')
+    $checkpoint1.classList.add('isActive')
     $checkpoint2.classList.add('isActive')
     $checkpoint3.classList.add('isActive')
     $checkpoint4.classList.remove('isActive')
@@ -39,7 +39,7 @@ $checkpoint3.addEventListener('mousedown', () =>
 
 $checkpoint4.addEventListener('mousedown', () =>
 {
-    $checkpoint4.classList.add('isActive')
+    $checkpoint1.classList.add('isActive')
     $checkpoint2.classList.add('isActive')
     $checkpoint3.classList.add('isActive')
     $checkpoint4.classList.add('isActive')
@@ -48,7 +48,7 @@ $checkpoint4.addEventListener('mousedown', () =>
 
 $checkpoint5.addEventListener('mousedown', () =>
 {
-    $checkpoint5.classList.add('isActive')
+    $checkpoint1.classList.add('isActive')
     $checkpoint2.classList.add('isActive')
     $checkpoint3.classList.add('isActive')
     $checkpoint4.classList.add('isActive')
