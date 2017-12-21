@@ -34,7 +34,7 @@ canvas {
     box-shadow: inset -4vw -4vw 4vw 0vw rgba(0, 0, 0, 0.83);
 }
 
-.planet img {
+.planet.earth img {
     position: absolute;
     left: -1%;
     top: -1%;
