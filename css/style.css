@@ -1,4 +1,830 @@
+*    { box-sizing: border-box; padding: 0; margin: 0; }
+body { overflow: hidden; }
+
+
 body
 {
-    background: red;
+    font-family: Arial, Helvetica, sans-serif;
+    overflow: hidden;
 }
+
+canvas
+{
+	position: absolute;
+    background: black;
+    z-index: -1;
+}
+/* Start welcome page */
+
+/******************
+
+      HEADER
+
+******************/
+
+canvas
+{
+	position: absolute;
+    background: black;
+    z-index: -1;
+}
+
+/******************
+      HEADER
+******************/
+
+header.header
+{
+    position: relative;
+    width: 100%;
+    height: 60px;
+    background: #000
+}
+
+.header .logo
+{
+  width: 25%;
+  height: 20px;
+  padding: 0 20px;
+}
+
+.header .logo img
+{	
+  width: 100%;
+}
+
+/********** SHARE ***********/
+
+.header .share
+{
+    position: absolute;
+    top: 10px;
+    right: 0;
+    width: 15%;
+    height: 100%;
+}
+
+.header .share .button
+{
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+    transition: transform 300ms cubic-bezier(0.85, 0.07, 0.23, 0.97);
+    will-change: transform;
+}
+
+.header .share .button .icon
+{
+    display: block;
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.header .share .button.instagram { transform: translateX(75px) }
+.header .share .button.facebook { transform: translateX(150px) }
+
+.header .share .button.facebook:hover { transform: translate(150px, -2px) }
+.header .share .button.twitter:hover { transform: translateY(-2px); }
+.header .share .button.instagram:hover { transform: translate(75px, -2px) }
+
+
+/******************
+      MAIN
+******************/
+
+.main
+{
+	z-index: 1
+}
+
+.main h1.title
+{
+    position: absolute;
+    text-align: center;
+    top: 20%;
+    left: 50%;
+	color: #E9E9E9;
+    font-size: 2rem;
+    transform: translateX(-50%)
+}
+
+.main h1.title span
+{
+	color: #EB0000;
+}
+
+.main .discover
+{
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.main .discover p
+{
+    text-align: center;
+    color: #EB0000;
+    font-size: 1.2rem;
+    margin-bottom: 60px;
+}
+
+/**************** PLANET ****************/
+
+.main .planet
+{
+    width: 25vw;
+    height: 25vw;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.main .planet.earth
+{
+    position: absolute;
+    top: 20%;
+    right: -12%;
+    box-shadow: 0 0 1vw rgba(255, 255, 255, 0.26);
+    animation: planetBounce 6s ease-in-out infinite alternate-reverse
+}
+
+.main .planet.mars
+{
+    position: absolute;
+    top: 40%;
+    left: -12%;
+    box-shadow: 0 0 1vw rgba(255, 255, 255, 0.26);
+    animation: planetBounce 6s ease-in-out infinite alternate-reverse
+}
+
+.main .planet img
+{
+  width: 100%;
+  height: 100%;
+}
+
+.main .planet.earth .boxShadow 
+{
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border-radius: 100%;
+    box-shadow: inset -4vw -4vw 4vw 0vw rgba(0, 0, 0, 0.83);
+}
+
+.main .planet.mars .boxShadow
+{
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border-radius: 100%;
+    box-shadow: inset -4vw -1.5vw 6vw 0vw rgba(0, 0, 0, 0.83);
+}
+
+/**** Clouds ****/
+
+.main .clouds
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.main .clouds .cloud .c1
+{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform: rotateZ(30deg);
+    opacity: 1;
+    box-shadow: 0 2vw 0.5vw rgba(7, 7, 7, 0.3);
+    animation: cloud 1234s linear infinite, marsCloudOpacity 8s ease-in infinite alternate;
+}
+
+.main .clouds .cloud .c3
+{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: -3%;
+    border-radius: 100%;
+    transform: rotateZ(30deg);
+    opacity: 0.5;
+    box-shadow: 0 2vw 1vw rgba(7, 7, 7, 0.3);
+}
+
+.main .earth .clouds .cloud .c1 { animation: cloud 1234s linear infinite, opacityc1 8s ease-in infinite alternate; }
+.main .earth .clouds .cloud .c3 { animation: cloud2 1000s linear infinite, opacityc3 8s ease-in infinite alternate; }
+.main .mars .clouds .cloud .c1 { animation: cloud 1234s linear infinite, marsCloudOpacity 8s ease-in infinite alternate; }
+.main .mars .clouds .cloud .c3 { animation: cloud2 1000s linear infinite, marsCloud2Opacity 8s ease-in infinite alternate; }
+
+@keyframes planetBounce
+{
+    0% { transform: translateY(0) }
+    100% { transform: translateY(0.5vw) }
+}
+
+@keyframes cloud
+{
+    0% { transform: rotateZ(30deg)scale(1.5, 1.5); }
+    50% { transform: rotateZ(165deg)scale(1.5, 1.5); }
+    100% { transform: rotateZ(360deg)scale(1.5, 1.5); }
+}
+
+@keyframes cloud2
+{
+    0% { transform: rotateZ(30deg)scale(1.5, 1.5); }
+    100% { transform: rotateZ(-330deg)scale(1.5, 1.5); }
+}
+
+@keyframes opacityc1 
+{
+    0% { opacity: 0; }
+    50% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+@keyframes opacityc3
+{
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@keyframes marsCloudOpacity
+{
+    0% { opacity: 0; }
+    50% { opacity: 0.2; }
+    100% { opacity: 0; }
+}
+
+@keyframes marsCloud2Opacity
+{
+    0% { opacity: 0.25; }
+    50% { opacity: 0; }
+    100% { opacity: 0.15; }
+}
+
+/************** Arrows *******************/
+
+.main .arrows
+{
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%);
+   
+}
+
+.main .arrows .arrow
+{
+    animation: arrowBounce 2s ease-in infinite alternate-reverse;
+}
+
+.main .arrows .arrow div
+{
+    display: inline-block;
+    width: 30px;
+    height: 10px;
+    background: rgba(255, 255, 255, 0.26);
+    transform: skewY(45deg);
+}
+
+.main .arrows .arrow div:nth-child(2) { transform: translateX(-15%) skewY(-45deg) }
+
+@keyframes arrowBounce
+{
+    0% {transform: translateY(0)}
+    100% {transform: translateY(0.7vw)}
+}
+
+
+/*********************
+     Progress Bar 
+     
+**********************/
+
+.progressBar
+{
+    position: absolute;
+    top: 92%;
+    left: 50%;
+    width: 50%;
+    height: 1px;
+    background: #ffffff;
+    transform: translateX(-50%)
+}
+
+.progressBar .checkpoints
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 14px;
+    height: 14px;
+    border-radius: 100%;
+    background: #000;
+    border: 2px solid #ffffff;
+    transform: translate(-50%, -50%);
+}
+
+.progressBar .checkpoints div
+{
+    width: 100%;
+    height: 100%;
+    background: #ffffff;
+    opacity: 0;
+    transition: opacity 300ms ease-in;
+    will-change: opacity;
+}
+
+.progressBar .checkpoint-2 { left: 25%; }
+.progressBar .checkpoint-3 { left: 50%; }
+.progressBar .checkpoint-4 { left: 75%; }
+.progressBar .checkpoint-5 { left: 100%; }
+
+.progressBar .checkpoint-1.isActive div,
+.progressBar .checkpoint-2.isActive div,
+.progressBar .checkpoint-3.isActive div,
+.progressBar .checkpoint-4.isActive div,
+.progressBar .checkpoint-5.isActive div
+{
+    opacity: 1;
+}
+
+
+/*********************
+        EQUALIZER
+*********************/
+  
+.equalizer{
+    position: absolute;
+	bottom: 20px;
+	right: 20px;
+    overflow: hidden;
+    width: 4vw;
+    height: 3vw;
+    font-size: 0;
+ }
+  
+.equalizer .bar
+{
+    display: inline-block;
+    width: 20%;
+    height: 100%;
+    background: #ccc;
+    margin: 0 1%;
+    transform-origin: 100% 100%;
+    animation: equalizer-bar-bounce 1.5s infinite;
+    animation-fill-mode: backwards;
+    will-change: transform;
+}
+
+.equalizer.muted .bar
+{
+    animation-play-state: paused;
+    transform: scaleY(0.1);
+}
+
+@keyframes equalizer-bar-bounce
+{
+    0% { transform: scaleY(0.1); }
+    10% { transform: scaleY(0.86); }
+    50% { transform: scaleY(0.33); }
+    70% { transform: scaleY(0.68); }
+    100% { transform: scaleY(0.1); }
+}
+  
+.equalizer .bar-1 { animation-delay: 0.1s; }
+.equalizer .bar-2 { animation-delay: 0.7s; }
+.equalizer .bar-3 { animation-delay: 0.2s; }
+.equalizer .bar-4 { animation-delay: 0.5s; }
+.equalizer .bar-5 { animation-delay: 0.8s; }
+
+/* End welcome page */
+
+.content
+{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+}
+
+.not-shown
+{
+    visibility: hidden;
+}
+
+.content.first
+{
+    position: absolute;
+}
+.content.second
+{
+    position: absolute;
+    overflow: hidden;
+}
+.content.third
+{
+    position: absolute;
+}
+.content.fourth
+{
+    position: absolute;
+}
+.content.fifth
+{
+    position: absolute;
+}
+
+.rocket-reactor
+{
+    transform:scale(3);
+    width: 100%;
+    height: 100%;
+}
+
+.rocket-reac-sup
+{
+    transition: transform 3s ease;
+    will-change: transform;
+}
+
+.start-rocket-reactor
+{
+    transform: scale(6.5) rotate(90deg) translate(5vw, 10vw);
+    width: 100px;
+    height: 100px;
+    transform-origin: 50% 50%;
+}
+
+.end-rocket-reactor
+{
+    transform: scale(6.5) rotate(90deg) translate(5vw, -18vw);
+    width: 100px;
+    height: 100px;
+    transform-origin: 50% 50%;
+}
+
+
+
+.page
+{
+    width: 140%;
+    height: 100%;
+    background-color: #f1f1f1;
+    z-index: 10;
+    position: fixed; 
+    transform: translateX(-75%) skew(-20deg);
+    will-change: transform;
+    transition: transform 2s ease;
+}
+
+.transition
+{
+    transform: translateX(40%) skew(20deg);
+}
+
+.text-zone
+{
+    height: 300px;
+    width: 300px;
+    position: fixed;
+    top: 20%;
+    z-index: 15;
+    will-change: opacity;
+    transition: opacity 1s ease;
+}
+
+.text1, .text3, .text5
+{  
+    left: 5%;
+}
+
+.text2, .text4
+{
+    right: 5%;
+}
+
+.not-active
+{
+    opacity: 0;
+}
+
+/* Earth's CSS */
+canvas {
+    background: black;
+}
+
+.planet {
+    width: 25vw;
+    height: 25vw;
+    border-radius: 100%;
+    overflow: hidden;
+}
+
+.planet.earth.inSlide {
+    position: absolute;
+    top: 35%;
+    z-index: 2;
+    left: 55%;
+    border-radius: 100%;
+    box-shadow: 0 0 15vw 2vw rgba(10, 82, 104, 0.56), -0.2vw -0.2vw 1.5vw 0vw rgba(248, 185, 180, 0.75);
+    animation: planetBounce 3s ease-in-out infinite alternate-reverse;
+}
+
+.planet.earth .boxShadow {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 101%;
+    top: 0;
+    left: 0;
+    border-radius: 100%;
+    box-shadow: inset -4vw -4vw 4vw 0vw rgba(0, 0, 0, 0.83);
+}
+
+.planet.earth img.earthImage {
+    position: absolute;
+    left: -1%;
+    top: -1%;
+    width: 101%;
+    height: 101%;
+}
+
+.clouds {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.clouds .cloud .c1 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform: rotateZ(30deg);
+    opacity: 1;
+    box-shadow: 0 2vw 0.5vw rgba(7, 7, 7, 0.3);
+    animation: cloud 1234s linear infinite, opacityc1 8s ease-in infinite alternate;
+}
+
+.clouds .cloud .c3 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: -3%;
+    border-radius: 100%;
+    transform: rotateZ(30deg);
+    opacity: 0.5;
+    box-shadow: 0 2vw 1vw rgba(7, 7, 7, 0.3);
+    animation: cloud2 1000s linear infinite, opacityc3 8s ease-in infinite alternate;
+}
+
+@keyframes planetBounce {
+    0%   { transform: translateY(0) }
+    100% { transform: translateY(0.5vw) }
+}
+
+@keyframes cloud {
+    0%   { transform: rotateZ(30deg) scale(1.5, 1.5) }
+    50%  { transform: rotateZ(165deg) scale(1.5, 1.5) }
+    100% { transform: rotateZ(360deg) scale(1.5, 1.5) }
+}
+
+@keyframes cloud2 {
+    0%   { transform: rotateZ(30deg) scale(1.5, 1.5) }
+    100% { transform: rotateZ(-330deg) scale(1.5, 1.5) }
+}
+
+@keyframes opacityc1 {
+    0%   { opacity: 0 }
+    50%  { opacity: 1 }
+    100% { opacity: 0 }
+}
+
+@keyframes opacityc3 {
+    0%   { opacity: 1 }
+    50%  { opacity: 0 }
+    100% { opacity: 1 }
+}
+
+/* Earth CSS end */
+
+/* timeline start */
+/* .tl-start, .tl-end
+{
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: pink;
+}
+
+.tl-start
+{
+    transform: translate(0px, -20px)
+}
+
+.tl-end
+{
+    transform: translate(480px, -20px)
+}
+
+.tl-timeline
+{
+    position: absolute;
+    width: 490px;
+    height: 10px;
+    background-color: purple;
+    transform: translate(20px, 0px)
+}
+
+.tl-rocket
+{
+    position: absolute;
+    width: 75px;
+    height: 75px;
+    transform: translate(20px, -33px);
+    transition: transform 1s ease;
+    will-change: transform;
+}
+
+.tl-rocket .rocket
+{
+    width: 100%;
+    height: 100%;
+    transform: rotate(90deg);
+}
+
+.tl-all
+{
+    position: fixed;
+    z-index: 20;
+    left: 25%;
+    top: 90%;
+}
+
+.tl-mid
+{
+    transform: translateX(50%)
+} */
+
+/* timeline end */
+
+/* Rocket's CSS */
+.rocket_container{
+    width: 300px;
+    height: 450px;
+    position: absolute;
+    animation-name: rocket-animation;
+    animation-duration: 10s;
+    animation-timing-function: ease-in-out;
+    animation-play-state: running;
+    animation-iteration-count: infinite;
+    transform: translate(55vw, 15vw) rotate(90deg);
+}
+
+.rocket{
+    width: 80%;
+    height: 100%;
+    background-color: transparent;
+}
+
+.flames{
+    transform: rotate(180deg) translate(271px, -452px);
+}
+
+canvas.flames
+{
+    background-color: transparent;
+}
+
+
+
+@keyframes rocket-animation{
+    0%   {  transform: translate(5vw, 15vw) rotate(90deg) }
+    20%  {  transform: translate(55vw, 15vw) rotate(90deg) }
+    40%  {  transform: scale(0.5) translate(50vw, 3vw) rotate(90deg) }
+    60%  {  transform: scale(0.5) translate(130vw, 3vw) rotate(90deg) }
+    80%  {  transform: scale(1.5) translate(5vw, 17vw) rotate(90deg) }
+    100% {  transform: scale(1.5) translate(185vw, 17vw) rotate(90deg) }
+} 
+
+@media screen and (min-width: 600px) and (max-width: 1000px) {
+    .rocket_container {
+        transform: rotate(90deg) scale(0.5);
+    }
+}
+
+@media screen and (min-width: 400px) and (max-width: 599px) {
+      .rocket_container {
+      transform: rotate(90deg) scale(0.3);
+    }
+}
+
+  @media screen and (min-width: 200px) and (max-width: 399px) {
+    .rocket_container {
+      transform: rotate(90deg) scale(0.2);
+    }
+}
+
+  @media screen and (min-width: 0px) and (max-width: 199px) {
+    .rocket_container {
+      transform: rotate(90deg) scale(0.1);
+    }
+}
+
+/* Rocket's CSS end */
+
+/* start Fourth-Fifth slide */
+
+.mars .planet
+{
+    width: 25vw;
+    height: 25vw;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.mars .planet.mars
+{
+    position: absolute;
+    top: 40%;
+    /* left: 50%; */
+    box-shadow: 0 0 1vw rgba(255, 255, 255, 0.26);
+    animation: planetBounce 6s ease-in-out infinite alternate-reverse;
+}
+
+.mars .planet img
+{
+  width: 100%;
+  height: 100%;
+}
+
+.mars .planet.mars .boxShadow
+{
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border-radius: 100%;
+    box-shadow: inset -4vw -1.5vw 6vw 0vw rgba(0, 0, 0, 0.83);
+}
+
+/**** Clouds ****/
+
+.mars .clouds
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.mars .clouds .cloud .c1
+{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform: rotateZ(30deg);
+    opacity: 1;
+    box-shadow: 0 2vw 0.5vw rgba(7, 7, 7, 0.3);
+    animation: cloud 1234s linear infinite, marsCloudOpacity 8s ease-in infinite alternate;
+}
+
+.mars .clouds .cloud .c3
+{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: -3%;
+    border-radius: 100%;
+    transform: rotateZ(30deg);
+    opacity: 0.5;
+    box-shadow: 0 2vw 1vw rgba(7, 7, 7, 0.3);
+    animation: marsCloud2Opacity 8s ease-in infinite alternate;
+}
+.fourth .mars .planet.mars
+{
+    left: 15%;
+}
+.fifth .mars .planet.mars
+{
+    left: 50%;
+}
+/* end Fourth-Fifth slide */
