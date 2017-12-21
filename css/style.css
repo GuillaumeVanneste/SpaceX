@@ -8,7 +8,7 @@ body
     overflow: hidden;
 }
 
-canvas
+canvas.sky
 {
 	position: absolute;
     background: black;
@@ -21,13 +21,6 @@ canvas
       HEADER
 
 ******************/
-
-canvas
-{
-	position: absolute;
-    background: black;
-    z-index: -1;
-}
 
 /******************
       HEADER
@@ -325,10 +318,11 @@ header.header
     position: absolute;
     top: 92%;
     left: 50%;
-    width: 50%;
+    width: 25%;
     height: 1px;
     background: #ffffff;
-    transform: translateX(-50%)
+    transform: translateX(-50%);
+    z-index: 666;
 }
 
 .progressBar .checkpoints
@@ -658,8 +652,8 @@ canvas {
     height: 100%;
 }
 
-.first .flames {
-    transform: rotate(180deg)  translate(271px, -452px);
+.third .flames {
+    transform: rotate(180deg)  translate(30px, 0px);
 }
 
 
@@ -795,16 +789,22 @@ canvas {
     background-color: transparent;
 }
 
-.flames{
-    transform: rotate(180deg) translate(271px, -452px);
-}
-
 canvas.flames
 {
     background-color: transparent;
 }
 
+.first .flames2
+{
+    transform: rotate(180deg) translate(30px, 0px)
+}
 
+.second .flames3
+{
+    transform: rotate(180deg) translate(32px, -68px);
+    width: 170%;
+    height: 100%;
+}
 
 @keyframes rocket-animation{
     0%   {  transform: translate(5vw, 15vw) rotate(90deg) }
@@ -919,7 +919,7 @@ canvas.flames
 }
 .fifth .mars .planet.mars
 {
-    top: 40%;
-    left: 50%;
+    top: 20%;
+    left: 60%;
 }
 /* end Fourth-Fifth slide */
