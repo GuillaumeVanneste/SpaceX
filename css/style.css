@@ -36,15 +36,19 @@ header.header
 
 .header .logo
 {
-  width: 25%;
-  height: 20px;
-  padding: 0 20px;
+    display: flex;
+    align-items: center;
+    width: 25%;
+    height: 100%;
+    padding: 0 20px;
 }
 
 .header .logo img
-{	
-  width: 100%;
+{
+    width: 100%;
 }
+
+
 
 /********** SHARE ***********/
 
@@ -475,14 +479,14 @@ header.header
     background-color: #f1f1f1;
     z-index: 10;
     position: fixed; 
-    transform: translateX(-75%) skew(-20deg);
+    transform: translateX(40%) skew(20deg);
     will-change: transform;
     transition: transform 2s ease;
 }
 
 .transition
 {
-    transform: translateX(40%) skew(20deg);
+    transform: translateX(-75%) skew(-20deg);
 }
 
 .text-zone
@@ -708,66 +712,6 @@ canvas {
 }
 
 /* Earth CSS end */
-
-/* timeline start */
-/* .tl-start, .tl-end
-{
-    position: absolute;
-    width: 50px;
-    height: 50px;
-    background-color: pink;
-}
-
-.tl-start
-{
-    transform: translate(0px, -20px)
-}
-
-.tl-end
-{
-    transform: translate(480px, -20px)
-}
-
-.tl-timeline
-{
-    position: absolute;
-    width: 490px;
-    height: 10px;
-    background-color: purple;
-    transform: translate(20px, 0px)
-}
-
-.tl-rocket
-{
-    position: absolute;
-    width: 75px;
-    height: 75px;
-    transform: translate(20px, -33px);
-    transition: transform 1s ease;
-    will-change: transform;
-}
-
-.tl-rocket .rocket
-{
-    width: 100%;
-    height: 100%;
-    transform: rotate(90deg);
-}
-
-.tl-all
-{
-    position: fixed;
-    z-index: 20;
-    left: 25%;
-    top: 90%;
-}
-
-.tl-mid
-{
-    transform: translateX(50%)
-} */
-
-/* timeline end */
 
 /* Rocket's CSS */
 .rocket_container{

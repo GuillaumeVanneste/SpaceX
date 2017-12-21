@@ -9,7 +9,7 @@ const $text2 = document.querySelector('.text2')
 const $text3 = document.querySelector('.text3')
 const $text4 = document.querySelector('.text4')
 const $text5 = document.querySelector('.text5')
-const welcomePage = document.querySelector('.welcome-page')
+const $main = document.querySelector('.main')
 const $slide1 = document.querySelector('.first')
 const $slide2 = document.querySelector('.second')
 const $slide3 = document.querySelector('.third')
@@ -18,7 +18,6 @@ const $slide5 = document.querySelector('.fifth')
 
 
 const $rocketReactor = document.querySelector('.rocket-reac-sup')
-
 
 document.addEventListener('mousewheel', (event) =>
 {
@@ -31,12 +30,24 @@ document.addEventListener('mousewheel', (event) =>
         //TRANSITIONS
         if(!(event.deltaX > 0 || event.deltaX < 0))
         {
-            $page.classList.toggle('transition')
 
-            // changing slides in function of the transition
-            if(changeSlide != 4 || event.deltaY <= 0)
+            if(changeSlide == 1 && event.deltaY < 0)
+            {
+                $page.classList.remove('transition')
+            }
+            else if(changeSlide >= 1 )
             {
                 $page.classList.toggle('transition')
+            }
+    
+            // changing slides in function of the transition
+            if(changeSlide != 5 || event.deltaY <= 0)
+            {
+                if(changeSlide > 0)
+                {
+                    $page.classList.toggle('transition')
+                    console.log('toggle')
+                }
                 if(event.deltaY > 0)
                 {
                     changeSlide++
@@ -44,49 +55,74 @@ document.addEventListener('mousewheel', (event) =>
                     {
                         if(changeSlide == 0)
                         {
+                            $main.classList.remove('not-shown')
+                            $slide1.classList.add('not-shown')
+                            $slide2.classList.add('not-shown')
+                            $slide3.classList.add('not-shown')
+                            $slide4.classList.add('not-shown')
+                            $slide5.classList.add('not-shown')
+                            $page.classList.add('not-shown')
+                        }
+                        else if(changeSlide == 1)
+                        {
+                            $main.classList.add('not-shown')
                             $slide1.classList.remove('not-shown')
                             $slide2.classList.add('not-shown')
                             $slide3.classList.add('not-shown')
                             $slide4.classList.add('not-shown')
                             $slide5.classList.add('not-shown')
+                            $page.classList.remove('not-shown')
+                            
                         }
-                        else if(changeSlide == 1)
+                        else if(changeSlide == 2)
                         {
+                            $main.classList.add('not-shown')                        
                             $slide1.classList.add('not-shown')
                             $slide2.classList.remove('not-shown')
                             $slide3.classList.add('not-shown')
                             $slide4.classList.add('not-shown')
                             $slide5.classList.add('not-shown')
+                            $page.classList.remove('not-shown')
+                            
                         }
-                        else if(changeSlide == 2)
+                        else if(changeSlide == 3)
                         {
+                            $main.classList.add('not-shown')                        
                             $slide1.classList.add('not-shown')
                             $slide2.classList.add('not-shown')
                             $slide3.classList.remove('not-shown')
                             $slide4.classList.add('not-shown')
                             $slide5.classList.add('not-shown')
+                            $page.classList.remove('not-shown')
+                            
                         }
-                        else if(changeSlide == 3)
+                        else if(changeSlide == 4)
                         {
+                            $main.classList.add('not-shown')
                             $slide1.classList.add('not-shown')
                             $slide2.classList.add('not-shown')
                             $slide3.classList.add('not-shown')
                             $slide4.classList.remove('not-shown')
                             $slide5.classList.add('not-shown')
+                            $page.classList.remove('not-shown')
+                            
                         }
-                        else if(changeSlide == 4)
+                        else if(changeSlide == 5)
                         {
+                            $main.classList.add('not-shown')
                             $slide1.classList.add('not-shown')
                             $slide2.classList.add('not-shown')
                             $slide3.classList.add('not-shown')
                             $slide4.classList.add('not-shown')
                             $slide5.classList.remove('not-shown')
+                            $page.classList.remove('not-shown')
+                            
                         }
                     }, 500)
     
-                    if(changeSlide > 4)
+                    if(changeSlide > 5)
                     {
-                        changeSlide = 4
+                        changeSlide = 5
                     }
                 }
             }
@@ -102,43 +138,63 @@ document.addEventListener('mousewheel', (event) =>
                     {
                         if(changeSlide == 0)
                         {
+                            $main.classList.remove('not-shown')
+                            $slide1.classList.add('not-shown')
+                            $slide2.classList.add('not-shown')
+                            $slide3.classList.add('not-shown')
+                            $slide4.classList.add('not-shown')
+                            $slide5.classList.add('not-shown')
+                            $page.classList.add('not-shown')
+                        }
+                        else if(changeSlide == 1)
+                        {
+                            $main.classList.add('not-shown')
                             $slide1.classList.remove('not-shown')
                             $slide2.classList.add('not-shown')
                             $slide3.classList.add('not-shown')
                             $slide4.classList.add('not-shown')
                             $slide5.classList.add('not-shown')
+                            $page.classList.remove('not-shown')                        
                         }
-                        else if(changeSlide == 1)
+                        else if(changeSlide == 2)
                         {
+                            $main.classList.add('not-shown')
                             $slide1.classList.add('not-shown')
                             $slide2.classList.remove('not-shown')
                             $slide3.classList.add('not-shown')
                             $slide4.classList.add('not-shown')
                             $slide5.classList.add('not-shown')
+                            $page.classList.remove('not-shown')
                         }
-                        else if(changeSlide == 2)
+                        else if(changeSlide == 3)
                         {
+                            $main.classList.add('not-shown')
                             $slide1.classList.add('not-shown')
                             $slide2.classList.add('not-shown')
                             $slide3.classList.remove('not-shown')
                             $slide4.classList.add('not-shown')
                             $slide5.classList.add('not-shown')
+                            $page.classList.remove('not-shown')
                         }
-                        else if(changeSlide == 3)
+                        else if(changeSlide == 4)
                         {
+                            $main.classList.add('not-shown')
                             $slide1.classList.add('not-shown')
                             $slide2.classList.add('not-shown')
                             $slide3.classList.add('not-shown')
                             $slide4.classList.remove('not-shown')
                             $slide5.classList.add('not-shown')
+                            $page.classList.remove('not-shown')
                         }
-                        else if(changeSlide == 4)
+                        else if(changeSlide == 5)
                         {
+                            $main.classList.add('not-shown')
                             $slide1.classList.add('not-shown')
                             $slide2.classList.add('not-shown')
                             $slide3.classList.add('not-shown')
                             $slide4.classList.add('not-shown')
                             $slide5.classList.remove('not-shown')
+                            $page.classList.remove('not-shown')
                         }
                     }, 500)
     
@@ -148,75 +204,85 @@ document.addEventListener('mousewheel', (event) =>
                     }
                 }
             }
-    
-            //Change text in function of the transition
-            if(changeSlide == 0)
-            {
-                $text1.classList.remove('not-active')
-                $text2.classList.add('not-active')
-                $text3.classList.add('not-active')
-                $text4.classList.add('not-active')
-                $text5.classList.add('not-active')
-            }
-            else if(changeSlide == 1)
-            {
-                $text1.classList.add('not-active')
-                $text2.classList.remove('not-active')
-                $text3.classList.add('not-active')
-                $text4.classList.add('not-active')
-                $text5.classList.add('not-active')
-            }
-            else if(changeSlide == 2)
-            {
-                $text1.classList.add('not-active')
-                $text2.classList.add('not-active')
-                $text3.classList.remove('not-active')
-                $text4.classList.add('not-active')
-                $text5.classList.add('not-active')
-            }
-            else if(changeSlide == 3)
-            {
-                $text1.classList.add('not-active')
-                $text2.classList.add('not-active')
-                $text3.classList.add('not-active')
-                $text4.classList.remove('not-active')
-                $text5.classList.add('not-active')
-            }
-            else if(changeSlide == 4)
-            {
-                $text1.classList.add('not-active')
-                $text2.classList.add('not-active')
-                $text3.classList.add('not-active')
-                $text4.classList.add('not-active')
-                $text5.classList.remove('not-active')
-            }
-    
-            //Delay for next scroll
-            setTimeout(() =>
-            {
-                animationIsActive = false
-            },
-            1000)
         }
-    
-        // Animation for 2nd slide
-        if(changeSlide == 1)
+
+        //Change text in function of the transition
+        if(changeSlide == 0)
         {
-            setTimeout(() =>
-            {
-            $rocketReactor.classList.remove('start-rocket-reactor')
-            $rocketReactor.classList.add('end-rocket-reactor')
-            }, 1000)
+            $text1.classList.add('not-active')
+            $text2.classList.add('not-active')
+            $text3.classList.add('not-active')
+            $text4.classList.add('not-active')
+            $text5.classList.add('not-active')
         }
-        else
+        else if(changeSlide == 1)
         {
-            $rocketReactor.classList.remove('end-rocket-reactor')
-            $rocketReactor.classList.add('start-rocket-reactor')
+            $text1.classList.remove('not-active')
+            $text2.classList.add('not-active')
+            $text3.classList.add('not-active')
+            $text4.classList.add('not-active')
+            $text5.classList.add('not-active')
         }
+        else if(changeSlide == 2)
+        {
+            $text1.classList.add('not-active')
+            $text2.classList.remove('not-active')
+            $text3.classList.add('not-active')
+            $text4.classList.add('not-active')
+            $text5.classList.add('not-active')
+        }
+        else if(changeSlide == 3)
+        {
+            $text1.classList.add('not-active')
+            $text2.classList.add('not-active')
+            $text3.classList.remove('not-active')
+            $text4.classList.add('not-active')
+            $text5.classList.add('not-active')
+        }
+        else if(changeSlide == 4)
+        {
+            $text1.classList.add('not-active')
+            $text2.classList.add('not-active')
+            $text3.classList.add('not-active')
+            $text4.classList.remove('not-active')
+            $text5.classList.add('not-active')
+        }
+        else if(changeSlide == 5)
+        {
+            $text1.classList.add('not-active')
+            $text2.classList.add('not-active')
+            $text3.classList.add('not-active')
+            $text4.classList.add('not-active')
+            $text5.classList.remove('not-active')
+        }
+
+        //Delay for next scroll
+        setTimeout(() =>
+        {
+            animationIsActive = false
+        },
+        1000)
+    }
+
+    // Animation for 2nd slide
+    if(changeSlide == 1)
+    {
+        setTimeout(() =>
+        {
+        $rocketReactor.classList.remove('start-rocket-reactor')
+        $rocketReactor.classList.add('end-rocket-reactor')
+        }, 1000)
+    }
+    else
+    {
+        $rocketReactor.classList.remove('end-rocket-reactor')
+        $rocketReactor.classList.add('start-rocket-reactor')
     }
 })
 
-/* Start welcome page JS */
+/* Main page JS */
+
+// Variables
 const $progressBar = document.querySelector('.progressBar')
 const $checkpoint1 = $progressBar.querySelector('.checkpoint-1')
 const $checkpoint2 = $progressBar.querySelector('.checkpoint-2')
@@ -225,50 +291,66 @@ const $checkpoint4 = $progressBar.querySelector('.checkpoint-4')
 const $checkpoint5 = $progressBar.querySelector('.checkpoint-5')
 
 const $equalizer = document.querySelector('.equalizer')
+
 const $music = document.querySelector('audio')
+$music.volume = 0.25
 
 let playingMusic = true
 
+// Listen to mouse down on the frist checkpoint on the progress bar
 $checkpoint1.addEventListener('mousedown', () =>
 {
+    // Check the checkpoint cliced and all checkpoint before
     $checkpoint1.classList.add('isActive')
     $checkpoint2.classList.remove('isActive')
     $checkpoint3.classList.remove('isActive')
     $checkpoint4.classList.remove('isActive')
     $checkpoint5.classList.remove('isActive')
-
-    d
 })
 
+// Listen to mouse down on the second checkpoint on the progress bar
 $checkpoint2.addEventListener('mousedown', () =>
 {
+    // Check the checkpoint cliced and all checkpoint before
     $checkpoint1.classList.add('isActive')
     $checkpoint2.classList.add('isActive')
+
+    // Uncheck all checkpoint after the one cliced
     $checkpoint3.classList.remove('isActive')
     $checkpoint4.classList.remove('isActive')
     $checkpoint5.classList.remove('isActive')
 })
 
+// Listen to mouse down on the third checkpoint on the progress bar
 $checkpoint3.addEventListener('mousedown', () =>
 {
+    // Check the checkpoint cliced and all checkpoint before
     $checkpoint1.classList.add('isActive')
     $checkpoint2.classList.add('isActive')
     $checkpoint3.classList.add('isActive')
+
+    // Uncheck all checkpoint after the one cliced
     $checkpoint4.classList.remove('isActive')
     $checkpoint5.classList.remove('isActive')
 })
 
+// Listen to mouse down on the fourth checkpoint on the progress bar
 $checkpoint4.addEventListener('mousedown', () =>
 {
+    // Check the checkpoint cliced and all checkpoint before
     $checkpoint1.classList.add('isActive')
     $checkpoint2.classList.add('isActive')
     $checkpoint3.classList.add('isActive')
     $checkpoint4.classList.add('isActive')
+
+    // Uncheck all checkpoint after the one cliced
     $checkpoint5.classList.remove('isActive')
 })
 
+// Listen to mouse down on the fifth checkpoint on the progress bar
 $checkpoint5.addEventListener('mousedown', () =>
 {
+    // Check the checkpoint cliced and all checkpoint before
     $checkpoint1.classList.add('isActive')
     $checkpoint2.classList.add('isActive')
     $checkpoint3.classList.add('isActive')
@@ -276,9 +358,13 @@ $checkpoint5.addEventListener('mousedown', () =>
     $checkpoint5.classList.add('isActive')
 })
 
+// Listen to mouse down on equalizer
 $equalizer.addEventListener('mousedown', () =>
 {
+    // Pause or run the equalizer's animation
     $equalizer.classList.toggle('muted')
+    
+    // When the music is playing
     if(playingMusic)
     {
         $music.pause()
@@ -286,9 +372,10 @@ $equalizer.addEventListener('mousedown', () =>
     } else
     {
         $music.play()
+        playingMusic = true
     }
 })
-/* End welcome page JS */
+/* End main JS */
 
 /* Script for Stars */
 
