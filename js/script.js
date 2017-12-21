@@ -46,7 +46,6 @@ document.addEventListener('mousewheel', (event) =>
                 if(changeSlide > 0)
                 {
                     $page.classList.toggle('transition')
-                    console.log('toggle')
                 }
                 if(event.deltaY > 0)
                 {
@@ -265,7 +264,7 @@ document.addEventListener('mousewheel', (event) =>
     }
 
     // Animation for 2nd slide
-    if(changeSlide == 1)
+    if(changeSlide == 2)
     {
         setTimeout(() =>
         {
@@ -658,33 +657,43 @@ const drawFlames = () =>
 }
 
 // Create a loop to call other functions
+let rocketAnimationOne = false
 const loopRocket = () => 
 {
     window.requestAnimationFrame(loopRocket)
-
-    // Use the first flame counter to draw 10 flames per frame
-    for(let i = 0; i < 10; i++)
+        
+    if(changeSlide != 3)
     {
-        createFlames()
+        rocketAnimationOne = false
     }
-
-    // Use the second flame counter to draw 10 flames per frame
-    for(let j = 0; j < 10; j++)
+    else 
     {
-        createFlames()
+        rocketAnimationOne = true
     }
-
-    // Use the third flame counter to draw 10 flames per frame
-    for(let k = 0; k < 10; k++)
-    {
-        createFlames()
-    }
+    if(rocketAnimationOne)
+    {// Use the first flame counter to draw 10 flames per frame
+        for(let i = 0; i < 10; i++)
+        {
+            createFlames()
+        }
     
-    // Call functions
-    createFlames()
-    updateFlames()
-    clearFlames()
-    drawFlames()  
+        // Use the second flame counter to draw 10 flames per frame
+        for(let j = 0; j < 10; j++)
+        {
+            createFlames()
+        }
+    
+        // Use the third flame counter to draw 10 flames per frame
+        for(let k = 0; k < 10; k++)
+        {
+            createFlames()
+        }
+        createFlames()
+    }
+        // Call functions
+        updateFlames()
+        clearFlames()
+        drawFlames()  
 }
     
 // Call the loop function
@@ -894,26 +903,35 @@ const drawFlames2 = () => {
 }
 
 // Create a loop to call other functions
+let rocketAnimationTwo = false
 const loopRocket2 = () => {
     window.requestAnimationFrame(loopRocket2)
-
     // Use the first flame counter to draw 10 flames per frame
-    for (let i = 0; i < 10; i++) {
-        createFlames2()
+    if(changeSlide != 1)
+    {
+        rocketAnimationTwo = false
     }
-
-    // Use the second flame counter to draw 10 flames per frame
-    for (let j = 0; j < 10; j++) {
-        createFlames2()
+    else 
+    {
+        rocketAnimationTwo = true
     }
+    if(rocketAnimationTwo)
+    {
+        for (let i = 0; i < 10; i++) {
+            createFlames2()
+        }
 
-    // Use the third flame counter to draw 10 flames per frame
-    for (let k = 0; k < 10; k++) {
-        createFlames2()
+        // Use the second flame counter to draw 10 flames per frame
+        for (let j = 0; j < 10; j++) {
+            createFlames2()
+        }
+
+        // Use the third flame counter to draw 10 flames per frame
+        for (let k = 0; k < 10; k++) {
+            createFlames2()
+        }
     }
-
     // Call functions
-    createFlames2()
     updateFlames2()
     clearFlames2()
     drawFlames2()
@@ -923,7 +941,6 @@ const loopRocket2 = () => {
 loopRocket2()
 
 /* End rocket's end */
-
 
 /* Start 3rd fire JS */
 
@@ -1124,33 +1141,41 @@ const drawFlames3 = () => {
 }
 
 // Create a loop to call other functions
+let rocketAnimationThree = false
 const loopRocket3 = () => {
     window.requestAnimationFrame(loopRocket3)
-
-    // Use the first flame counter to draw 10 flames per frame
-    for (let i = 0; i < 10; i++) {
-        createFlames3()
-    }
-
-    // Use the second flame counter to draw 10 flames per frame
-    for (let j = 0; j < 10; j++) {
-        createFlames3()
-    }
-
-    // Use the third flame counter to draw 10 flames per frame
-    for (let k = 0; k < 10; k++) {
-        createFlames3()
-    }
-
-    // Call functions
-    createFlames3()
-    updateFlames3()
-    clearFlames3()
-    drawFlames3()
+        // Use the first flame counter to draw 10 flames per frame
+        if(changeSlide != 2)
+        {
+            rocketAnimationThree = false
+        }
+        else 
+        {
+            rocketAnimationThree = true
+        }
+        if(rocketAnimationThree)
+        {
+            for (let i = 0; i < 10; i++) {
+                createFlames3()
+            }
+        
+            // Use the second flame counter to draw 10 flames per frame
+            for (let j = 0; j < 10; j++) {
+                createFlames3()
+            }
+        
+            // Use the third flame counter to draw 10 flames per frame
+            for (let k = 0; k < 10; k++) {
+                createFlames3()
+            }
+        }
+        // Call functions
+        updateFlames3()
+        clearFlames3()
+        drawFlames3()
 }
 
-// Call the loop function
+// Call the loop function  
 loopRocket3()
 
 /* End 3rd fire end */
-
