@@ -39,7 +39,7 @@ header.header
 
 /********** SHARE ***********/
 
-.share
+.header .share
 {
     position: absolute;
     top: 10px;
@@ -48,7 +48,7 @@ header.header
     height: 100%;
 }
 
-.share .button
+.header .share .button
 {
     display: block;
     position: absolute;
@@ -59,7 +59,7 @@ header.header
     will-change: transform;
 }
 
-.share .button .icon
+.header .share .button .icon
 {
     display: block;
     position: absolute;
@@ -68,12 +68,12 @@ header.header
     border-radius: 50%;
 }
 
-.share .button.instagram { transform: translateX(75px) }
-.share .button.facebook { transform: translateX(150px) }
+.header .share .button.instagram { transform: translateX(75px) }
+.header .share .button.facebook { transform: translateX(150px) }
 
-.share .button.facebook:hover { transform: translate(150px, -2px) }
-.share .button.twitter:hover { transform: translateY(-2px); }
-.share .button.instagram:hover { transform: translate(75px, -2px) }
+.header .share .button.facebook:hover { transform: translate(150px, -2px) }
+.header .share .button.twitter:hover { transform: translateY(-2px); }
+.header .share .button.instagram:hover { transform: translate(75px, -2px) }
 
 
 /******************
@@ -82,14 +82,12 @@ header.header
 
 ******************/
 
-/***** MAIN *****/
-
 .main
 {
 	z-index: 1
 }
 
-h1.title
+.main h1.title
 {
     position: absolute;
     text-align: center;
@@ -100,12 +98,12 @@ h1.title
     transform: translateX(-50%)
 }
 
-h1.title span
+.main h1.title span
 {
 	color: #EB0000;
 }
 
-.discover
+.main .discover
 {
     position: absolute;
     top: 65%;
@@ -113,7 +111,7 @@ h1.title span
     transform: translate(-50%);
 }
 
-.discover p
+.main .discover p
 {
     text-align: center;
     color: #EB0000;
@@ -121,9 +119,9 @@ h1.title span
     margin-bottom: 60px;
 }
 
-/*** PLANET ***/
+/**************** PLANET ****************/
 
-.planet
+.main .planet
 {
     width: 25vw;
     height: 25vw;
@@ -131,7 +129,7 @@ h1.title span
     overflow: hidden;
 }
 
-.planet.earth
+.main .planet.earth
 {
     position: absolute;
     top: 20%;
@@ -140,7 +138,7 @@ h1.title span
     animation: planetBounce 6s ease-in-out infinite alternate-reverse
 }
 
-.planet.mars
+.main .planet.mars
 {
     position: absolute;
     top: 40%;
@@ -149,13 +147,13 @@ h1.title span
     animation: planetBounce 6s ease-in-out infinite alternate-reverse
 }
 
-.planet img
+.main .planet img
 {
   width: 100%;
   height: 100%;
 }
 
-.planet.earth .boxShadow 
+.main .planet.earth .boxShadow 
 {
     position: absolute;
     z-index: 1;
@@ -167,7 +165,7 @@ h1.title span
     box-shadow: inset -4vw -4vw 4vw 0vw rgba(0, 0, 0, 0.83);
 }
 
-.planet.mars .boxShadow
+.main .planet.mars .boxShadow
 {
     position: absolute;
     z-index: 1;
@@ -179,7 +177,9 @@ h1.title span
     box-shadow: inset -4vw -1.5vw 6vw 0vw rgba(0, 0, 0, 0.83);
 }
 
-.clouds
+/**** Clouds ****/
+
+.main .clouds
 {
     position: absolute;
     top: 0;
@@ -188,7 +188,7 @@ h1.title span
     height: 100%;
 }
 
-.clouds .cloud .c1
+.main .clouds .cloud .c1
 {
     position: absolute;
     width: 100%;
@@ -199,7 +199,7 @@ h1.title span
     animation: cloud 1234s linear infinite, marsCloudOpacity 8s ease-in infinite alternate;
 }
 
-.clouds .cloud .c3
+.main .clouds .cloud .c3
 {
     position: absolute;
     width: 100%;
@@ -211,10 +211,10 @@ h1.title span
     box-shadow: 0 2vw 1vw rgba(7, 7, 7, 0.3);
 }
 
-.earth .clouds .cloud .c1 { animation: cloud 1234s linear infinite, opacityc1 8s ease-in infinite alternate; }
-.earth .clouds .cloud .c3 { animation: cloud2 1000s linear infinite, opacityc3 8s ease-in infinite alternate; }
-.mars .clouds .cloud .c1 { animation: cloud 1234s linear infinite, marsCloudOpacity 8s ease-in infinite alternate; }
-.mars .clouds .cloud .c3 { animation: cloud2 1000s linear infinite, marsCloud2Opacity 8s ease-in infinite alternate; }
+.main .earth .clouds .cloud .c1 { animation: cloud 1234s linear infinite, opacityc1 8s ease-in infinite alternate; }
+.main .earth .clouds .cloud .c3 { animation: cloud2 1000s linear infinite, opacityc3 8s ease-in infinite alternate; }
+.main .mars .clouds .cloud .c1 { animation: cloud 1234s linear infinite, marsCloudOpacity 8s ease-in infinite alternate; }
+.main .mars .clouds .cloud .c3 { animation: cloud2 1000s linear infinite, marsCloud2Opacity 8s ease-in infinite alternate; }
 
 @keyframes planetBounce
 {
@@ -263,7 +263,45 @@ h1.title span
     100% { opacity: 0.15; }
 }
 
-/**** Progress ****/
+/************** Arrows *******************/
+
+.main .arrows
+{
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%);
+   
+}
+
+.main .arrows .arrow
+{
+    animation: arrowBounce 2s ease-in infinite alternate-reverse;
+}
+
+.main .arrows .arrow div
+{
+    display: inline-block;
+    width: 30px;
+    height: 10px;
+    background: rgba(255, 255, 255, 0.26);
+    transform: skewY(45deg);
+}
+
+.main .arrows .arrow div:nth-child(2) { transform: translateX(-15%) skewY(-45deg) }
+
+@keyframes arrowBounce
+{
+    0% {transform: translateY(0)}
+    100% {transform: translateY(0.7vw)}
+}
+
+
+/*********************
+
+     Progress Bar 
+     
+**********************/
 
 .progressBar
 {
@@ -314,57 +352,19 @@ h1.title span
 }
 
 
-/***** Arrows *****/
-
-.arrows
-{
-    position: absolute;
-    top: 75%;
-    left: 50%;
-    transform: translate(-50%);
-   
-}
-
-.arrows .arrow
-{
-    animation: arrowBounce 2s ease-in infinite alternate-reverse;
-}
-
-.arrows .arrow div
-{
-    display: inline-block;
-    width: 30px;
-    height: 10px;
-    background: rgba(255, 255, 255, 0.26);
-    transform: skewY(45deg);
-}
-
-.arrows .arrow div:nth-child(2) { transform: translateX(-15%) skewY(-45deg) }
-
-@keyframes arrowBounce
-{
-    0% {transform: translateY(0)}
-    100% {transform: translateY(0.7vw)}
-}
-
 /*********************
 
         EQUALIZER
 
 *********************/
-
-.container 
-{
-	position: absolute;
+  
+.equalizer{
+    position: absolute;
 	bottom: 20px;
 	right: 20px;
     overflow: hidden;
-}
-  
-.equalizer{
     width: 4vw;
     height: 3vw;
-    margin: auto;
     font-size: 0;
  }
   
