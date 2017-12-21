@@ -442,7 +442,7 @@ header.header
 
 .rocket-reactor
 {
-    transform:scale(3);
+    transform:scale(1);
     width: 100%;
     height: 100%;
 }
@@ -455,7 +455,7 @@ header.header
 
 .start-rocket-reactor
 {
-    transform: scale(6.5) rotate(90deg) translate(8vh, 10vw);
+    transform: scale(18.5) rotate(90deg) translate(8vh, 10vw);
     width: 7vw;
     height: 7vw;
     transform-origin: 50% 50%;
@@ -463,7 +463,7 @@ header.header
 
 .end-rocket-reactor
 {
-    transform: scale(6.5) rotate(90deg) translate(8vh, -15vw);
+    transform: scale(18.5) rotate(90deg) translate(3vh, -5vw);
     width: 7vw;
     height: 7vw;
     transform-origin: 50% 50%;
@@ -739,9 +739,8 @@ canvas.flames
 
 .second .flames3
 {
-    transform: rotate(180deg) translate(23px, -49px);
-    width: 170%;
-    height: 100%;
+    transform: rotate(180deg) translate(-4px, 2.5px);
+    width: 64%;
 }
 
 @keyframes rocket-animation{
