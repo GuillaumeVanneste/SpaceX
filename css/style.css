@@ -464,17 +464,17 @@ header.header
 
 .start-rocket-reactor
 {
-    transform: scale(6.5) rotate(90deg) translate(5vw, 10vw);
-    width: 100px;
-    height: 100px;
+    transform: scale(6.5) rotate(90deg) translate(8vh, 10vw);
+    width: 7vw;
+    height: 7vw;
     transform-origin: 50% 50%;
 }
 
 .end-rocket-reactor
 {
-    transform: scale(6.5) rotate(90deg) translate(5vw, -18vw);
-    width: 100px;
-    height: 100px;
+    transform: scale(6.5) rotate(90deg) translate(8vh, -13vw);
+    width: 7vw;
+    height: 7vw;
     transform-origin: 50% 50%;
 }
 
@@ -482,7 +482,7 @@ header.header
 
 .page
 {
-    width: 140%;
+    width: 155%;
     height: 100%;
     background-color: #f1f1f1;
     z-index: 10;
@@ -499,18 +499,34 @@ header.header
 
 .text-zone
 {
-    height: 300px;
-    width: 300px;
+    height: 700px;
+    width: 360px;
     position: fixed;
-    top: 20%;
+    top: 10%;
     z-index: 15;
     will-change: opacity;
     transition: opacity 1s ease;
+    
+}
+
+.Problems
+{
+    font-family: 'Share Tech', sans-serif;
+    font-size: 1.75em;
+    font-weight: bold;  
+}
+
+.Solutions
+{
+    font-family: 'Catamaran', sans-serif;
+    margin-top: 2.5em;
+    font-size: 1.063em;
 }
 
 .text1, .text3, .text5
 {  
     left: 5%;
+    
 }
 
 .text2, .text4
@@ -761,8 +777,6 @@ canvas.flames
 .mars .planet.mars
 {
     position: absolute;
-    top: 40%;
-    /* left: 50%; */
     box-shadow: 0 0 1vw rgba(255, 255, 255, 0.26);
     animation: planetBounce 6s ease-in-out infinite alternate-reverse;
 }
@@ -821,10 +835,12 @@ canvas.flames
 }
 .fourth .mars .planet.mars
 {
+    top: 30%;
     left: 15%;
 }
 .fifth .mars .planet.mars
 {
+    top: 40%;
     left: 50%;
 }
 /* end Fourth-Fifth slide */
