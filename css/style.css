@@ -1,7 +1,9 @@
 body {
     overflow: hidden;
-    margin: 0;
 }
+
+
+/** SPACE CANVAS PART **/
 
 .spaceCanvas {
     background: black;
@@ -35,7 +37,7 @@ body {
     box-shadow: inset -4vw -4vw 4vw 0vw rgba(0, 0, 0, 0.83);
 }
 
-.planet.earth .earthImg {
+.planet.earth img {
     position: absolute;
     left: -1%;
     top: -1%;
@@ -72,6 +74,9 @@ body {
     box-shadow: 0 2vw 1vw rgba(7, 7, 7, 0.3);
     animation: cloud2 1000s linear infinite, opacityc3 8s ease-in infinite alternate;
 }
+
+
+/*   EARTH ANIMATION   */
 
 @keyframes planetBounce {
     0% {
@@ -128,20 +133,20 @@ body {
 }
 
 
-/* ROCKET PART*/
+/** ROCKET PART **/
 
 .rocket_container {
-    width: 10vw;
-    height: 15vw;
+    width: 300px;
+    height: 450px;
     position: absolute;
     top: 20%;
-    left: 34%;
+    left: 46%;
     animation-name: rocket-animation;
     animation-duration: 10s;
     animation-timing-function: ease-in-out;
     animation-play-state: running;
     animation-iteration-count: infinite;
-    animation-direction: alternate;
+    animation-direction: normal;
     transform: rotate(90deg) scale(1);
 }
 
@@ -150,41 +155,36 @@ body {
     height: 100%;
 }
 
-.flamesCanvas {
+.flames {
     transform: rotate(180deg);
 }
 
 
-/*ROCKET LAND ANIMATION*/
+/*   ROCKET ANIMATION   */
 
-
-/*
 @keyframes rocket-animation {
-    20% {
-        left: 26%;
-        transform: rotate(80deg)
+    0% {
+        transform: scale(0.05);
     }
-    40% {
-        left: 26%;
-        transform: rotate(10deg);
+    20% {
+        left: 35%;
+        transform: rotate(-90deg) scale(0.1)
     }
     60% {
-        left: 26%;
-        transform: rotate(0deg);
+        left: 20%;
+        transform: rotate(-90deg) scale(0.4);
     }
     80% {
-        left: 26%;
-        transform: rotate(0deg);
+        transform: rotate(-90deg) scale(0.7)
     }
     100% {
-        left: 26%;
-        transform: rotate(0deg);
+        left: -100%;
+        transform: rotate(-90deg);
     }
 }
-*/
 
 
-/*BREAK-UP POINTS ROCKET*/
+/*   ROCKET RESPONSIVE   */
 
 @media screen and (min-width: 600px) and (max-width: 1000px) {
     .rocket_container {
