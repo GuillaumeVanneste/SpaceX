@@ -50,15 +50,27 @@ canvas {
     height: 100%;
 }
 
-.clouds .cloud {
+.clouds .cloud .c1 {
     position: absolute;
     width: 100%;
     height: 100%;
+    transform: rotateZ(30deg);
+    opacity: 1;
+    box-shadow: 0 2vw 1vw rgba(7, 7, 7, 0.3);
+    animation: cloud 1234s linear infinite, opacityc1 8S ease-in infinite alternate;
+    animation:
+}
+
+.clouds .cloud .c3 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: -3%;
     border-radius: 100%;
     transform: rotateZ(30deg);
-    opacity: 0.8;
+    opacity: 0.75;
     box-shadow: 0 2vw 1vw rgba(7, 7, 7, 0.3);
-    animation: cloud2 1249s linear infinite;
+    animation: cloud2 1234s linear infinite, opacityc3 8S ease-in infinite alternate;
 }
 
 @keyframes planetBounce {
@@ -70,11 +82,53 @@ canvas {
     }
 }
 
-@keyframes cloud2 {
+@keyframes cloud {
     0% {
-        transform: translate(0, 0)rotateZ(30deg)scale(1.5, 1.5)
+        transform: rotateZ(30deg)scale(1.5, 1.5);
+    }
+    50% {
+        transform: rotateZ(165deg)scale(1.5, 1.5);
     }
     100% {
-        transform: translate(10vw, 10vw)rotateZ(360deg)scale(1.5, 1.5)
+        transform: rotateZ(360deg)scale(1.5, 1.5);
+    }
+}
+
+@keyframes cloud2 {
+    0% {
+        transform: rotateZ(30deg)scale(1.5, 1.5);
+    }
+    100% {
+        transform: rotateZ(-330deg)scale(1.5, 1.5);
+    }
+}
+
+@keyframes opacityc1 {
+    0% {
+        opacity: 0.75;
+    }
+    25% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.75;
+    }
+    75% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes opacityc3 {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
     }
 }
