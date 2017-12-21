@@ -463,7 +463,7 @@ header.header
 
 .end-rocket-reactor
 {
-    transform: scale(6.5) rotate(90deg) translate(8vh, -13vw);
+    transform: scale(6.5) rotate(90deg) translate(8vh, -15vw);
     width: 7vw;
     height: 7vw;
     transform-origin: 50% 50%;
@@ -542,9 +542,9 @@ canvas {
 
 .planet.earth.inSlide {
     position: absolute;
-    top: 35%;
+    top: 38vh;
     z-index: 2;
-    left: 55%;
+    left: 54vw;
     border-radius: 100%;
     box-shadow: 0 0 15vw 2vw rgba(10, 82, 104, 0.56), -0.2vw -0.2vw 1.5vw 0vw rgba(248, 185, 180, 0.75);
     animation: planetBounce 3s ease-in-out infinite alternate-reverse;
@@ -636,8 +636,8 @@ canvas {
     width: 300px;
     height: 450px;
     position: absolute;
-    top: 20%;
-    left: 46%;
+    top: 20vh;
+    left: 46vw;
     animation-name: rocket-animation-earth;
     animation-duration: 10s;
     animation-timing-function: ease-in-out;
@@ -665,26 +665,23 @@ canvas {
         transform: scale(0.05);
     }
     20% {
-        left: 35%;
-        transform: rotate(-90deg) scale(0.1)
+        transform: translateX(0) rotate(-90deg) scale(0.1)
     }
     60% {
-        left: 20%;
-        transform: rotate(-90deg) scale(0.4);
+        transform: translateX(-20vw) rotate(-90deg) scale(0.4);
     }
     80% {
-        transform: rotate(-90deg) scale(0.7)
+        transform: translateX(-35vw) rotate(-90deg) scale(0.7)
     }
     100% {
-        left: -100%;
-        transform: rotate(-90deg);
+        transform: translateX(-100vw) rotate(-90deg);
     }
 }
 
 
 /*   ROCKET RESPONSIVE   */
 
-@media screen and (min-width: 600px) and (max-width: 1000px) {
+/* @media screen and (min-width: 600px) and (max-width: 1000px) {
     .rocket_container {
         transform: rotate(90deg) scale(0.5);
     }
@@ -706,12 +703,12 @@ canvas {
     .rocket_container {
         transform: rotate(90deg) scale(0.1);
     }
-}
+} */
 
 /* Earth CSS end */
 
 /* Rocket's CSS */
-.rocket_container{
+.rocket_container_bis{
     width: 300px;
     height: 450px;
     position: absolute;
@@ -742,7 +739,7 @@ canvas.flames
 
 .second .flames3
 {
-    transform: rotate(180deg) translate(32px, -68px);
+    transform: rotate(180deg) translate(23px, -49px);
     width: 170%;
     height: 100%;
 }
@@ -754,30 +751,6 @@ canvas.flames
     60%  {  transform: scale(0.5) translate(130vw, 3vw) rotate(90deg) }
     80%  {  transform: scale(1.5) translate(5vw, 17vw) rotate(90deg) }
     100% {  transform: scale(1.5) translate(185vw, 17vw) rotate(90deg) }
-} 
-
-@media screen and (min-width: 600px) and (max-width: 1000px) {
-    .rocket_container {
-        transform: rotate(90deg) scale(0.5);
-    }
-}
-
-@media screen and (min-width: 400px) and (max-width: 599px) {
-      .rocket_container {
-      transform: rotate(90deg) scale(0.3);
-    }
-}
-
-  @media screen and (min-width: 200px) and (max-width: 399px) {
-    .rocket_container {
-      transform: rotate(90deg) scale(0.2);
-    }
-}
-
-  @media screen and (min-width: 0px) and (max-width: 199px) {
-    .rocket_container {
-      transform: rotate(90deg) scale(0.1);
-    }
 }
 
 /* Rocket's CSS end */
