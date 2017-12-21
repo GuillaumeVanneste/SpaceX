@@ -360,8 +360,7 @@ h1.title span
     overflow: hidden;
 }
   
-.equalizer
-{
+.equalizer{
     width: 4vw;
     height: 3vw;
     margin: auto;
@@ -379,6 +378,12 @@ h1.title span
     animation: equalizer-bar-bounce 1.5s infinite;
     animation-fill-mode: backwards;
     will-change: transform;
+}
+
+.equalizer.muted .bar
+{
+    animation-play-state: paused;
+    transform: scaleY(0.1);
 }
 
 @keyframes equalizer-bar-bounce
