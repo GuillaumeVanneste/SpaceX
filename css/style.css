@@ -427,26 +427,18 @@ header.header
     visibility: hidden;
 }
 
-.content.first
-{
-    position: absolute;
-}
-.content.second
-{
-    position: absolute;
-    overflow: hidden;
-}
-.content.third
-{
-    position: absolute;
-}
-.content.fourth
-{
-    position: absolute;
-}
+.content.first, 
+.content.second,
+.content.third, 
+.content.fourth,
 .content.fifth
 {
     position: absolute;
+}
+
+.content.second
+{
+    overflow: hidden;
 }
 
 .rocket-reactor
@@ -477,8 +469,6 @@ header.header
     height: 7vw;
     transform-origin: 50% 50%;
 }
-
-
 
 .page
 {
@@ -638,6 +628,83 @@ canvas {
     100% { opacity: 1 }
 }
 
+/** ROCKET PART **/
+
+.first .rocket_container {
+    width: 300px;
+    height: 450px;
+    position: absolute;
+    top: 20%;
+    left: 46%;
+    animation-name: rocket-animation-earth;
+    animation-duration: 10s;
+    animation-timing-function: ease-in-out;
+    animation-play-state: running;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    transform: rotate(90deg) scale(1);
+}
+
+.first .rocket {
+    width: 80%;
+    height: 100%;
+}
+
+.first .flames {
+    transform: rotate(180deg)  translate(271px, -452px);
+}
+
+
+/*   ROCKET ANIMATION   */
+
+@keyframes rocket-animation-earth {
+    0% {
+        transform: scale(0.05);
+    }
+    20% {
+        left: 35%;
+        transform: rotate(-90deg) scale(0.1)
+    }
+    60% {
+        left: 20%;
+        transform: rotate(-90deg) scale(0.4);
+    }
+    80% {
+        transform: rotate(-90deg) scale(0.7)
+    }
+    100% {
+        left: -100%;
+        transform: rotate(-90deg);
+    }
+}
+
+
+/*   ROCKET RESPONSIVE   */
+
+@media screen and (min-width: 600px) and (max-width: 1000px) {
+    .rocket_container {
+        transform: rotate(90deg) scale(0.5);
+    }
+}
+
+@media screen and (min-width: 400px) and (max-width: 599px) {
+    .rocket_container {
+        transform: rotate(90deg) scale(0.3);
+    }
+}
+
+@media screen and (min-width: 200px) and (max-width: 399px) {
+    .rocket_container {
+        transform: rotate(90deg) scale(0.2);
+    }
+}
+
+@media screen and (min-width: 0px) and (max-width: 199px) {
+    .rocket_container {
+        transform: rotate(90deg) scale(0.1);
+    }
+}
+
 /* Earth CSS end */
 
 /* timeline start */
@@ -777,7 +844,7 @@ canvas.flames
 .mars .planet.mars
 {
     position: absolute;
-    box-shadow: 0 0 1vw rgba(255, 255, 255, 0.26);
+    box-shadow: -0.2vw -0.2vw 1.5vw 0vw rgba(248, 185, 180, 0.75);
     animation: planetBounce 6s ease-in-out infinite alternate-reverse;
 }
 
