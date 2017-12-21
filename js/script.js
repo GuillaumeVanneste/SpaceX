@@ -710,7 +710,9 @@ loopRocket()
 const $canvasRocket2 = document.querySelector('.flames2')
 const contextRocket2 = $canvasRocket2.getContext('2d')
 
-
+const flames6 = []
+const flames4 = []
+const flames5 = []
 // Function pushing flames into transmitters
 const createFlames2 = () => {
     // Create the first fire object
@@ -737,7 +739,7 @@ const createFlames2 = () => {
     flame.lifeDelta = 0.1 + 0.1 * Math.random()
 
     // Push flames into the first flame transmitter
-    flames.push(flame)
+    flames6.push(flame)
 
     // Create the second fire object
     const flame2 = {}
@@ -763,7 +765,7 @@ const createFlames2 = () => {
     flame2.lifeDelta = 0.1 + 0.1 * Math.random()
 
     // Push flames into the second flame transmitter
-    flames2.push(flame2)
+    flames4.push(flame2)
 
     // Create the third fire object
     const flame3 = {}
@@ -789,7 +791,7 @@ const createFlames2 = () => {
     flame3.lifeDelta = 0.1 + 0.1 * Math.random()
 
     // Push flames into the third flame transmitter
-    flames3.push(flame3)
+    flames5.push(flame3)
 }
 
 // Create a function to update flames position and delete them using life points and opacity
@@ -798,7 +800,7 @@ const updateFlames2 = () => {
     let i = 0
 
     // For every flame into the first fire, use angle and speed to update flames position
-    for (const flame of flames) {
+    for (const flame of flames6) {
         // Update flames position using sinus, cosinus, angle and speed
         flame.x += Math.sin(flame.angle) * flame.speed
         flame.y += Math.cos(flame.angle) * flame.speed
@@ -812,7 +814,7 @@ const updateFlames2 = () => {
 
         // Conditions for a flame to die
         if (flame.y < 0 || flame.y > $canvasRocket2.height || flame.life <= 0) {
-            flames.splice(i, 1)
+            flames6.splice(i, 1)
         }
         // Increment the first fire counter
         i++
@@ -822,7 +824,7 @@ const updateFlames2 = () => {
     let j = 0
 
     // For every flame into the second fire, use angle and speed to update flames position
-    for (const flame2 of flames2) {
+    for (const flame2 of flames4) {
         // Update flames position using sinus, cosinus, angle and speed
         flame2.x += Math.sin(flame2.angle) * flame2.speed
         flame2.y += Math.cos(flame2.angle) * flame2.speed
@@ -836,7 +838,7 @@ const updateFlames2 = () => {
 
         // Conditions for a flame to die
         if (flame2.y < 0 || flame2.y > $canvasRocket2.height || flame2.life <= 0) {
-            flames2.splice(j, 1)
+            flames4.splice(j, 1)
         }
         // Increment the second fire counter
         j++
@@ -846,7 +848,7 @@ const updateFlames2 = () => {
     let k = 0
 
     // For every flame into the third fire, use angle and speed to update flames position
-    for (const flame3 of flames3) {
+    for (const flame3 of flames5) {
         // Update flames position using sinus, cosinus, angle and speed
         flame3.x += Math.sin(flame3.angle) * flame3.speed
         flame3.y += Math.cos(flame3.angle) * flame3.speed
@@ -860,7 +862,7 @@ const updateFlames2 = () => {
 
         // Conditions for a flame to die
         if (flame3.y < 0 || flame3.y > $canvasRocket2.height || flame3.life <= 0) {
-            flames3.splice(k, 1)
+            flames5.splice(k, 1)
         }
         // Increment the third fire counter
         k++
@@ -878,7 +880,7 @@ const drawFlames2 = () => {
     contextRocket2.globalCompositeOperation = 'screen'
 
     // Browse the flame array (first fire) and draw a flame in every passage
-    for (const flame of flames) {
+    for (const flame of flames6) {
         contextRocket2.beginPath()
         contextRocket2.arc(flame.x, flame.y, flame.radius * flame.life, Math.PI * 2, 0)
         contextRocket2.fillStyle = flame.color
@@ -886,7 +888,7 @@ const drawFlames2 = () => {
     }
 
     // Browse the flame2 array (second fire) and draw a flame in every passage
-    for (const flame2 of flames2) {
+    for (const flame2 of flames4) {
         contextRocket2.beginPath()
         contextRocket2.arc(flame2.x, flame2.y, flame2.radius * flame2.life, Math.PI * 2, 0)
         contextRocket2.fillStyle = flame2.color
@@ -894,7 +896,7 @@ const drawFlames2 = () => {
     }
 
     // Browse the flame3 array (third fire) and draw a flame in every passage
-    for (const flame3 of flames3) {
+    for (const flame3 of flames5) {
         contextRocket2.beginPath()
         contextRocket2.arc(flame3.x, flame3.y, flame3.radius * flame3.life, Math.PI * 2, 0)
         contextRocket2.fillStyle = flame3.color
@@ -934,7 +936,7 @@ const loopRocket2 = () => {
     // Call functions
     updateFlames2()
     clearFlames2()
-    drawFlames2()
+    drawFlames2()   
 }
 
 // Call the loop function
@@ -949,7 +951,9 @@ loopRocket2()
 const $canvasRocket3 = document.querySelector('.flames3')
 const contextRocket3 = $canvasRocket3.getContext('2d')
 
-
+const flames7 = []
+const flames8 = []
+const flames9 = []
 // Function pushing flames into transmitters
 const createFlames3 = () => {
     // Create the first fire object
@@ -976,7 +980,7 @@ const createFlames3 = () => {
     flame.lifeDelta = 0.1 + 0.1 * Math.random()
 
     // Push flames into the first flame transmitter
-    flames.push(flame)
+    flames7.push(flame)
 
     // Create the second fire object
     const flame2 = {}
@@ -1002,7 +1006,7 @@ const createFlames3 = () => {
     flame2.lifeDelta = 0.1 + 0.1 * Math.random()
 
     // Push flames into the second flame transmitter
-    flames2.push(flame2)
+    flames8.push(flame2)
 
     // Create the third fire object
     const flame3 = {}
@@ -1028,7 +1032,7 @@ const createFlames3 = () => {
     flame3.lifeDelta = 0.1 + 0.1 * Math.random()
 
     // Push flames into the third flame transmitter
-    flames3.push(flame3)
+    flames9.push(flame3)
 }
 
 // Create a function to update flames position and delete them using life points and opacity
@@ -1037,7 +1041,7 @@ const updateFlames3 = () => {
     let i = 0
 
     // For every flame into the first fire, use angle and speed to update flames position
-    for (const flame of flames) {
+    for (const flame of flames7) {
         // Update flames position using sinus, cosinus, angle and speed
         flame.x += Math.sin(flame.angle) * flame.speed
         flame.y += Math.cos(flame.angle) * flame.speed
@@ -1051,7 +1055,7 @@ const updateFlames3 = () => {
 
         // Conditions for a flame to die
         if (flame.y < 0 || flame.y > $canvasRocket3.height || flame.life <= 0) {
-            flames.splice(i, 1)
+            flames7.splice(i, 1)
         }
         // Increment the first fire counter
         i++
@@ -1061,7 +1065,7 @@ const updateFlames3 = () => {
     let j = 0
 
     // For every flame into the second fire, use angle and speed to update flames position
-    for (const flame2 of flames2) {
+    for (const flame2 of flames8) {
         // Update flames position using sinus, cosinus, angle and speed
         flame2.x += Math.sin(flame2.angle) * flame2.speed
         flame2.y += Math.cos(flame2.angle) * flame2.speed
@@ -1075,7 +1079,7 @@ const updateFlames3 = () => {
 
         // Conditions for a flame to die
         if (flame2.y < 0 || flame2.y > $canvasRocket3.height || flame2.life <= 0) {
-            flames2.splice(j, 1)
+            flames8.splice(j, 1)
         }
         // Increment the second fire counter
         j++
@@ -1085,7 +1089,7 @@ const updateFlames3 = () => {
     let k = 0
 
     // For every flame into the third fire, use angle and speed to update flames position
-    for (const flame3 of flames3) {
+    for (const flame3 of flames9) {
         // Update flames position using sinus, cosinus, angle and speed
         flame3.x += Math.sin(flame3.angle) * flame3.speed
         flame3.y += Math.cos(flame3.angle) * flame3.speed
@@ -1099,7 +1103,7 @@ const updateFlames3 = () => {
 
         // Conditions for a flame to die
         if (flame3.y < 0 || flame3.y > $canvasRocket3.height || flame3.life <= 0) {
-            flames3.splice(k, 1)
+            flames9.splice(k, 1)
         }
         // Increment the third fire counter
         k++
@@ -1117,13 +1121,13 @@ const drawFlames3 = () => {
     contextRocket3.globalCompositeOperation = 'screen'
 
     // Browse the flame array (first fire) and draw a flame in every passage
-    for (const flame of flames) {
+    for (const flame of flames7) {
         contextRocket3.beginPath()
         contextRocket3.arc(flame.x, flame.y, flame.radius * flame.life, Math.PI * 2, 0)
         contextRocket3.fillStyle = flame.color
         contextRocket3.fill()
     }
-    for (const flame2 of flames2) {
+    for (const flame2 of flames8) {
         // Browse the flame2 array (second fire) and draw a flame in every passage
         contextRocket3.beginPath()
         contextRocket3.arc(flame2.x, flame2.y, flame2.radius * flame2.life, Math.PI * 2, 0)
@@ -1132,7 +1136,7 @@ const drawFlames3 = () => {
     }
 
     // Browse the flame3 array (third fire) and draw a flame in every passage
-    for (const flame3 of flames3) {
+    for (const flame3 of flames9) {
         contextRocket3.beginPath()
         contextRocket3.arc(flame3.x, flame3.y, flame3.radius * flame3.life, Math.PI * 2, 0)
         contextRocket3.fillStyle = flame3.color
