@@ -154,7 +154,8 @@ h1.title span
   height: 100%;
 }
 
-.planet.earth .boxShadow {
+.planet.earth .boxShadow 
+{
     position: absolute;
     z-index: 1;
     width: 100%;
@@ -165,7 +166,8 @@ h1.title span
     box-shadow: inset -4vw -4vw 4vw 0vw rgba(0, 0, 0, 0.83);
 }
 
-.planet.mars .boxShadow {
+.planet.mars .boxShadow
+{
     position: absolute;
     z-index: 1;
     width: 100%;
@@ -176,7 +178,8 @@ h1.title span
     box-shadow: inset -4vw -1.5vw 6vw 0vw rgba(0, 0, 0, 0.83);
 }
 
-.clouds {
+.clouds
+{
     position: absolute;
     top: 0;
     left: 0;
@@ -184,7 +187,8 @@ h1.title span
     height: 100%;
 }
 
-.clouds .cloud .c1 {
+.clouds .cloud .c1
+{
     position: absolute;
     width: 100%;
     height: 100%;
@@ -194,7 +198,8 @@ h1.title span
     animation: cloud 1234s linear infinite, marsCloudOpacity 8s ease-in infinite alternate;
 }
 
-.clouds .cloud .c3 {
+.clouds .cloud .c3
+{
     position: absolute;
     width: 100%;
     height: 100%;
@@ -203,61 +208,58 @@ h1.title span
     transform: rotateZ(30deg);
     opacity: 0.5;
     box-shadow: 0 2vw 1vw rgba(7, 7, 7, 0.3);
-    animation: cloud2 1000s linear infinite, marsCloud2Opacity 8s ease-in infinite alternate;
 }
 
-@keyframes planetBounce {
-    0% {
-        transform: translateY(0)
-    }
-    100% {
-        transform: translateY(0.5vw)
-    }
+.earth .clouds .cloud .c1 { animation: cloud 1234s linear infinite, opacityc1 8s ease-in infinite alternate; }
+.earth .clouds .cloud .c3 { animation: cloud2 1000s linear infinite, opacityc3 8s ease-in infinite alternate; }
+.mars .clouds .cloud .c1 { animation: cloud 1234s linear infinite, marsCloudOpacity 8s ease-in infinite alternate; }
+.mars .clouds .cloud .c3 { animation: cloud2 1000s linear infinite, marsCloud2Opacity 8s ease-in infinite alternate; }
+
+@keyframes planetBounce
+{
+    0% { transform: translateY(0) }
+    100% { transform: translateY(0.5vw) }
 }
 
-@keyframes cloud {
-    0% {
-        transform: rotateZ(30deg)scale(1.5, 1.5);
-    }
-    50% {
-        transform: rotateZ(165deg)scale(1.5, 1.5);
-    }
-    100% {
-        transform: rotateZ(360deg)scale(1.5, 1.5);
-    }
+@keyframes cloud
+{
+    0% { transform: rotateZ(30deg)scale(1.5, 1.5); }
+    50% { transform: rotateZ(165deg)scale(1.5, 1.5); }
+    100% { transform: rotateZ(360deg)scale(1.5, 1.5); }
 }
 
-@keyframes cloud2 {
-    0% {
-        transform: rotateZ(30deg)scale(1.5, 1.5);
-    }
-    100% {
-        transform: rotateZ(-330deg)scale(1.5, 1.5);
-    }
+@keyframes cloud2
+{
+    0% { transform: rotateZ(30deg)scale(1.5, 1.5); }
+    100% { transform: rotateZ(-330deg)scale(1.5, 1.5); }
 }
 
-@keyframes marsCloudOpacity {
-    0% {
-        opacity: 0;
-    }
-    50% {
-        opacity: 0.2;
-    }
-    100% {
-        opacity: 0;
-    }
+@keyframes opacityc1 
+{
+    0% { opacity: 0; }
+    50% { opacity: 1; }
+    100% { opacity: 0; }
 }
 
-@keyframes marsCloud2Opacity {
-    0% {
-        opacity: 0.25;
-    }
-    50% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 0.15;
-    }
+@keyframes opacityc3
+{
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@keyframes marsCloudOpacity
+{
+    0% { opacity: 0; }
+    50% { opacity: 0.2; }
+    100% { opacity: 0; }
+}
+
+@keyframes marsCloud2Opacity
+{
+    0% { opacity: 0.25; }
+    50% { opacity: 0; }
+    100% { opacity: 0.15; }
 }
 
 /**** Progress ****/
@@ -350,14 +352,16 @@ h1.title span
 
 *********************/
 
-.container {
+.container 
+{
 	position: absolute;
 	bottom: 20px;
 	right: 20px;
     overflow: hidden;
 }
   
-.equalizer {
+.equalizer
+{
     width: 4vw;
     height: 3vw;
     margin: auto;
