@@ -11,9 +11,9 @@
 </head>
 
 <body>
-    <canvas width="800" height="600"></canvas>
+    <canvas width="800" height="600" class="spaceCanvas"></canvas>
     <div class="planet earth planetBounce">
-        <img src="images/earth.png" alt="EarthPicture" />
+        <img src="images/earth.png" alt="EarthPicture" class="earthImg" />
         <div class="boxShadow"></div>
         <div class="clouds">
             <div class="cloud">
@@ -21,9 +21,15 @@
                 <img src="images/cloud2.png" alt="cloud" class="c3" />
             </div>
         </div>
-        <script src="scripts/canvas.js"></script>
-        <script src="scripts/main.js"></script>
-        <script src="js/script.js"></script>
+    </div>
+    <div class="rocket_container">
+        <img src="images/fuséesvg.svg" alt="space X rocket" class="rocket">
+        <canvas class="flamesCanvas"></canvas>
+    </div>
+
+    <script src="scripts/canvas.js"></script>
+    <script src="scripts/main.js"></script>
+    <script src="js/script.js"></script>
 </body>
 
 </html>

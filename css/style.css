@@ -1,8 +1,9 @@
 body {
     overflow: hidden;
+    margin: 0;
 }
 
-canvas {
+.spaceCanvas {
     background: black;
 }
 
@@ -34,7 +35,7 @@ canvas {
     box-shadow: inset -4vw -4vw 4vw 0vw rgba(0, 0, 0, 0.83);
 }
 
-.planet.earth img {
+.planet.earth .earthImg {
     position: absolute;
     left: -1%;
     top: -1%;
@@ -123,5 +124,88 @@ canvas {
     }
     100% {
         opacity: 1;
+    }
+}
+
+
+/* ROCKET PART*/
+
+.rocket_container {
+    width: 10vw;
+    height: 15vw;
+    position: absolute;
+    top: 20%;
+    left: 34%;
+    animation-name: rocket-animation;
+    animation-duration: 10s;
+    animation-timing-function: ease-in-out;
+    animation-play-state: running;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    transform: rotate(90deg) scale(1);
+}
+
+.rocket {
+    width: 80%;
+    height: 100%;
+}
+
+.flamesCanvas {
+    transform: rotate(180deg);
+}
+
+
+/*ROCKET LAND ANIMATION*/
+
+
+/*
+@keyframes rocket-animation {
+    20% {
+        left: 26%;
+        transform: rotate(80deg)
+    }
+    40% {
+        left: 26%;
+        transform: rotate(10deg);
+    }
+    60% {
+        left: 26%;
+        transform: rotate(0deg);
+    }
+    80% {
+        left: 26%;
+        transform: rotate(0deg);
+    }
+    100% {
+        left: 26%;
+        transform: rotate(0deg);
+    }
+}
+*/
+
+
+/*BREAK-UP POINTS ROCKET*/
+
+@media screen and (min-width: 600px) and (max-width: 1000px) {
+    .rocket_container {
+        transform: rotate(90deg) scale(0.5);
+    }
+}
+
+@media screen and (min-width: 400px) and (max-width: 599px) {
+    .rocket_container {
+        transform: rotate(90deg) scale(0.3);
+    }
+}
+
+@media screen and (min-width: 200px) and (max-width: 399px) {
+    .rocket_container {
+        transform: rotate(90deg) scale(0.2);
+    }
+}
+
+@media screen and (min-width: 0px) and (max-width: 199px) {
+    .rocket_container {
+        transform: rotate(90deg) scale(0.1);
     }
 }
