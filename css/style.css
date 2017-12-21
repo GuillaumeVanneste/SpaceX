@@ -57,7 +57,7 @@ canvas {
     transform: rotateZ(30deg);
     opacity: 1;
     box-shadow: 0 2vw 0.5vw rgba(7, 7, 7, 0.3);
-    animation: cloud 1234s linear infinite, opacityc1 14s ease-in infinite alternate;
+    animation: cloud 1234s linear infinite, opacityc1 8s ease-in infinite alternate;
 }
 
 .clouds .cloud .c3 {
@@ -69,7 +69,7 @@ canvas {
     transform: rotateZ(30deg);
     opacity: 0.5;
     box-shadow: 0 2vw 1vw rgba(7, 7, 7, 0.3);
-    animation: cloud2 1000s linear infinite, opacityc3 14s ease-in infinite alternate;
+    animation: cloud2 1000s linear infinite, opacityc3 8s ease-in infinite alternate;
 }
 
 @keyframes planetBounce {
