@@ -630,3 +630,252 @@ const loopRocket = () =>
 loopRocket()
 
 /* End rocket's end */
+
+
+// /* Start second flames */
+// // Create a canvas to draw rocket flames
+
+// const $canvasRocketEarth = document.querySelector('.flames2')
+// const contextRocketEarth = $canvasRocketEarth.getContext('2d')
+
+// // Create 3 flames transmitters
+// const flamesEarth = []
+// const flames2Earth = []
+// const flames3Earth = []
+
+// // Function pushing flames into transmitters
+// const createFlamesEarth = () => 
+// {
+//     // Create the first fire object
+//     const flame = {}
+    
+//     // Place the first fire source on canvas
+//     flame.x = $canvasRocketEarth.width / 2.6
+//     flame.y = $canvasRocketEarth.height
+
+//     // Create the first fire angle
+//     flame.angle = Math.random()*0.2 + 9.1
+
+//     // Choose the first fire color
+//     flame.color = `rgba(255,170,64,0.8)`
+
+//     // Choose the flames radius
+//     flame.radius = Math.random() * 15
+
+//     // Create flames speed and life points
+//     flame.speed = 9
+//     flame.life = 1
+
+//     // Choose the life points decreasing speed using a random setting
+//     flame.lifeDelta = 0.1 + 0.1 * Math.random()
+
+//     // Push flames into the first flame transmitter
+//     flamesEarth.push(flame)
+
+//     // Create the second fire object
+//     const flame2 = {}
+
+//     // Place the second fire source on canvas
+//     flame2.x = $canvasRocketEarth.width / 2
+//     flame2.y = $canvasRocketEarth.height
+    
+//     // Create the second fire angle
+//     flame2.angle = Math.random()*0.2 + 9.3
+    
+//     // Choose the second fire color
+//     flame2.color = `rgba(255,170,64,0.8)`
+    
+//     // Choose the flames radius
+//     flame2.radius = Math.random() * 15
+    
+//     // Create flames speed and life points
+//     flame2.speed = 9
+//     flame2.life = 1
+
+//     // Choose the life points decreasing speed using a random setting
+//     flame2.lifeDelta = 0.1 + 0.1 * Math.random()
+    
+//     // Push flames into the second flame transmitter
+//     flames2Earth.push(flame2)
+    
+//     // Create the third fire object
+//     const flame3 = {}
+
+//     // Place the third fire source on canvas
+//     flame3.x = $canvasRocketEarth.width / 1.61
+//     flame3.y = $canvasRocketEarth.height
+        
+//     // Create the third fire angle
+//     flame3.angle = Math.random()*0.2 + 9.5
+        
+//     // Choose the third fire color
+//     flame3.color = `rgba(255,170,64,0.8)`
+        
+//     // Choose the flames radius
+//     flame3.radius = Math.random() * 15
+        
+//     // Create flames speed and life points
+//     flame3.speed = 9
+//     flame3.life = 1
+
+//     // Choose the life points decreasing speed using a random setting
+//     flame3.lifeDelta = 0.1 + 0.1 * Math.random()
+        
+//     // Push flames into the third flame transmitter
+//     flames3Earth.push(flame3) 
+// }
+
+// // Create a function to update flames position and delete them using life points and opacity
+// const updateFlamesEarth = () => 
+// {
+//     // Create a counter for the first fire
+//     let i = 0
+
+//     // For every flame into the first fire, use angle and speed to update flames position
+//     for(const flame of flames)
+//     {
+//         // Update flames position using sinus, cosinus, angle and speed
+//         flame.x += Math.sin(flame.angle) * flame.speed
+//         flame.y += Math.cos(flame.angle) * flame.speed
+
+//         // Decrease the flames life points
+//         flame.life -= flame.lifeDelta
+
+//         // Change flame opacity using life points
+//         const flameOpacity = flame.life
+//         flame.color = `rgba(255, 170, 64, ${flameOpacity})`
+
+//         // Conditions for a flame to die
+//         if(flame.y < 0 || flame.y > $canvasRocketEarth.height || flame.life <= 0)
+//         {
+//             flamesEarth.splice(i, 1)
+//         }
+//         // Increment the first fire counter
+//         i++
+//     }
+
+//     // Create a counter for the second fire
+//     let j = 0
+
+//     // For every flame into the second fire, use angle and speed to update flames position
+//     for(const flame2 of flames2Earth)
+//     {
+//         // Update flames position using sinus, cosinus, angle and speed
+//         flame2.x += Math.sin(flame2.angle) * flame2.speed
+//         flame2.y += Math.cos(flame2.angle) * flame2.speed
+
+//         // Decrease the flames life points
+//         flame2.life -= flame2.lifeDelta
+
+//         // Change flame opacity using life points
+//         const flameOpacity = flame2.life
+//         flame2.color = `rgba(255, 170, 64, ${flameOpacity})`
+
+//         // Conditions for a flame to die
+//         if(flame2.y < 0 || flame2.y > $canvasRocketEarth.height || flame2.life <= 0)
+//         {
+//             flames2Earth.splice(j, 1)
+//         }
+//         // Increment the second fire counter
+//         j++
+//     }
+
+//     // Create a counter for the third fire
+//     let k = 0
+
+//     // For every flame into the third fire, use angle and speed to update flames position
+//     for(const flame3 of flames3Earth)
+//     {
+//         // Update flames position using sinus, cosinus, angle and speed
+//         flame3.x += Math.sin(flame3.angle) * flame3.speed
+//         flame3.y += Math.cos(flame3.angle) * flame3.speed
+
+//         // Decrease the flames life points
+//         flame3.life -= flame3.lifeDelta
+
+//         // Change flame opacity using life points
+//         const flameOpacity = flame3.life
+//         flame3.color = `rgba(255, 170, 64, ${flameOpacity})`
+
+//         // Conditions for a flame to die
+//         if(flame3.y < 0 || flame3.y > $canvasRocketEarth.height || flame3.life <= 0)
+//         {
+//             flames3Earth.splice(k, 1)
+//         }
+//         // Increment the third fire counter
+//         k++
+//     }
+// }
+
+// // Using clearRect to clear canvas
+// const clearFlamesEarth = () => 
+// {
+//     contextRocketEarth.clearRect(0, 0, $canvasRocketEarth.width, $canvasRocketEarth.height)
+// }
+
+// // Create a function to draw flames
+// const drawFlamesEarth = () => 
+// {
+//     // Choose a flame color composite operation
+//     contextRocketEarth.globalCompositeOperation = 'screen'
+    
+//     // Browse the flame array (first fire) and draw a flame in every passage
+//     for(const flame of flames)
+//     {
+//         contextRocketEarth.beginPath()
+//         contextRocketEarth.arc(flame.x, flame.y, flame.radius * flame.life, Math.PI*2, 0)
+//         contextRocketEarth.fillStyle = flame.color
+//         contextRocketEarth.fill()
+//     }
+
+//     // Browse the flame2 array (second fire) and draw a flame in every passage
+//     for(const flame2 of flames2Earth)
+//     {
+//         contextRocketEarth.beginPath()
+//         contextRocketEarth.arc(flame2.x, flame2.y, flame2.radius * flame2.life, Math.PI*2, 0)
+//         contextRocketEarth.fillStyle = flame2.color
+//         contextRocketEarth.fill()
+//     }
+
+//     // Browse the flame3 array (third fire) and draw a flame in every passage
+//     for(const flame3 of flames3Earth)
+//     {
+//         contextRocketEarth.beginPath()
+//         contextRocketEarth.arc(flame3.x, flame3.y, flame3.radius * flame3.life, Math.PI*2, 0)
+//         contextRocketEarth.fillStyle = flame3.color
+//         contextRocketEarth.fill()
+//     }
+// }
+
+// // Create a loop to call other functions
+// const loopRocketEarth = () => 
+// {
+//     window.requestAnimationFrame(loopRocketEarth)
+
+//     // Use the first flame counter to draw 10 flames per frame
+//     for(let i = 0; i < 10; i++)
+//     {
+//         createFlamesEarth()
+//     }
+
+//     // Use the second flame counter to draw 10 flames per frame
+//     for(let j = 0; j < 10; j++)
+//     {
+//         createFlamesEarth()
+//     }
+
+//     // Use the third flame counter to draw 10 flames per frame
+//     for(let k = 0; k < 10; k++)
+//     {
+//         createFlamesEarth()
+//     }
+    
+//     // Call functions
+//     createFlamesEarth()
+//     updateFlamesEarth()
+//     clearFlamesEarth()
+//     drawFlamesEarth()  
+// }
+    
+// // Call the loop function
+// loopRocketEarth()

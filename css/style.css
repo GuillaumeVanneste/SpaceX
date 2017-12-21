@@ -502,7 +502,7 @@ header.header
 .Problems
 {
     font-family: 'Share Tech', sans-serif;
-    font-size: 1.75em;
+    font-size: 1.7vw;
     font-weight: bold;  
 }
 
@@ -510,7 +510,7 @@ header.header
 {
     font-family: 'Catamaran', sans-serif;
     margin-top: 2.5em;
-    font-size: 1.063em;
+    font-size: 1.55vw;
 }
 
 .text1, .text3, .text5
