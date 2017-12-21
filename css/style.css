@@ -29,7 +29,7 @@ body
 }
 .third
 {
-    background-color: blue;
+    background-color: black;
     position: absolute;
     transform: translateX(200%)
 }
@@ -157,12 +157,12 @@ canvas {
 
 .tl-start
 {
-    transform: translate(500px, 500px)
+    transform: translate(0px, -20px)
 }
 
 .tl-end
 {
-    transform: translate(10px, 500px)
+    transform: translate(480px, -20px)
 }
 
 .tl-timeline
@@ -171,24 +171,33 @@ canvas {
     width: 490px;
     height: 10px;
     background-color: purple;
-    transform: translate(35px, 520px)
+    transform: translate(20px, 0px)
 }
 
 .tl-rocket
 {
-    background-color: grey;
     position: absolute;
     width: 75px;
-    height: 15px;
-    transform: translate(35px, 518px);
+    height: 75px;
+    transform: translate(20px, -33px);
     transition: transform 1s ease;
     will-change: transform;
+}
+
+.tl-rocket .rocket
+{
+    width: 100%;
+    height: 100%;
+    transform: rotate(90deg);
 }
 
 .tl-all
 {
     position: fixed;
     z-index: 20;
+    left: 25%;
+    top: 90%;
+    /* transform: translate(55vh, 10vh) */
 }
 
 .tl-mid
@@ -197,3 +206,63 @@ canvas {
 }
 
 /* timeline end */
+
+/* Rocket's CSS */
+
+.rocket_container{
+    width: 400px;
+    height: 600px;
+    position: absolute;
+    left: 54%;
+    animation-name: rocket-animation;
+    animation-duration: 10s;
+    animation-timing-function: ease-in-out;
+    animation-play-state: running;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    transform: rotate(90deg) scale(1);
+}
+
+.rocket{
+    width: 80%;
+    height: 100%;
+}
+
+.flames{
+    transform: rotate(180deg);
+}
+
+/*
+@keyframes rocket-animation{
+    10%  {left: 38%;}
+    50% {left: 10%;}
+    80% {left: 100%;}
+    100% {left: 200%;}
+}
+*/
+
+@media screen and (min-width: 600px) and (max-width: 1000px) {
+    .rocket_container {
+      transform: rotate(90deg) scale(0.7);
+    }
+  }
+
+  @media screen and (min-width: 400px) and (max-width: 599px) {
+    .rocket_container {
+      transform: rotate(90deg) scale(0.4);
+    }
+  }
+
+  @media screen and (min-width: 200px) and (max-width: 399px) {
+    .rocket_container {
+      transform: rotate(90deg) scale(0.2);
+    }
+  }
+
+  @media screen and (min-width: 0px) and (max-width: 199px) {
+    .rocket_container {
+      transform: rotate(90deg) scale(0.1);
+    }
+  }
+
+  /* Rocket's CSS end */

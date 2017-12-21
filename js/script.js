@@ -110,7 +110,7 @@ document.addEventListener('mousewheel', (event) =>
 })
 
 
-/* Script for Earth */
+/* Script for Stars */
 
 const $canvas = document.querySelector('canvas')
 const context = $canvas.getContext('2d')
@@ -157,22 +157,22 @@ const drawStars = () => {
     }
 }
 
-const clear = () => {
+const clearStars = () => {
     context.clearRect(0, 0, $canvas.width, $canvas.height)
 }
 
-const loop = () => {
-    requestAnimationFrame(loop)
+const loopStars = () => {
+    requestAnimationFrame(loopStars)
 
     updateStars()
-    clear()
+    clearStars()
     drawStars()
 }
 
-loop()
+loopStars()
 createStars()
 
-/* End script JS */
+/* End script Earth */
 
 /* start timeline */
 const $tlTimeline = document.querySelector('.tl-timeline')
@@ -183,12 +183,145 @@ document.addEventListener('mousewheel', () =>
 {
     if(changeSlide == 0)
     {
-        $tlRocket.style.transform = `translate(35px, 518px)`
+        $tlRocket.style.transform = `translate(20px, -33px)`
     }
-    if(changeSlide == $content.offsetWidth)
+    else if(changeSlide == $content.offsetWidth)
     {
-        $tlRocket.style.transform = `translate(${timelineWidth / 2}px, 518px)`
+        $tlRocket.style.transform = `translate(${timelineWidth * 0.25 - 20}px, -33px)`
+    }
+    else if(changeSlide == $content.offsetWidth * 2)
+    {
+        $tlRocket.style.transform = `translate(${timelineWidth * 0.5 - 20}px, -33px)`
+    }
+    else if(changeSlide == $content.offsetWidth * 3)
+    {
+        $tlRocket.style.transform = `translate(${timelineWidth * 0.75 - 20}px, -33px)`
+    }
+    else
+    {
+        $tlRocket.style.transform = `translate(${timelineWidth - 20}px, -33px)`
     }
 
 })
 /* end timeline */
+
+/* Start rocket's JS */ 
+
+// Draw flames
+
+const $canvasRocket = document.querySelector('.canvas-rocket')
+const contextRocket = $canvasRocket.getContext('2d')
+
+// const resize = () => {
+//     $canvasRocket.style.width = `80%`
+//     $canvasRocket.style.height = `30%`
+// }
+
+// window.addEventListener('resize', resize)
+// resize()
+
+const flames = []
+
+const createFlames = () => {
+    const flame = {}
+    flame.x = $canvasRocket.width / 2
+    flame.y = $canvasRocket.height
+
+    flame.angle = Math.random()*0.2 + 9.3
+
+    flame.color = `rgba(255,170,64,0.8)`
+
+    flame.radius = Math.random() * 10
+
+    flame.speed = 1
+    flame.life = 1
+    flame.lifeDelta = 0.005 + 0.005 * Math.random()
+
+    flames.push(flame)
+}
+
+const updateFlames = () => {
+    let i = 0
+    for(const flame of flames){
+        flame.x += Math.sin(flame.angle) * flame.speed
+        flame.y += Math.cos(flame.angle) * flame.speed
+
+        flame.life -= flame.lifeDelta
+
+        const flameOpacity = flame.life
+        flame.color = `rgba(255, 170, 64, ${flameOpacity})`
+
+        if(flame.y < 0 || flame.y > $canvasRocket.height || flame.life <= 0){
+            flames.splice(i, 1)
+        }
+        i++
+    }
+}
+
+const clearRocket = () => {
+    contextRocket.clearRect(0, 0, $canvasRocket.width, $canvasRocket.height)
+}
+
+const drawFlames = () => {
+    
+        contextRocket.globalCompositeOperation = 'lighter'
+    
+        // on parcoure le tableau particles et a chaque passage on crée une particule
+        for(const flame of flames){
+            contextRocket.beginPath()
+            contextRocket.arc(flame.x, flame.y, flame.radius * flame.life, Math.PI*2, 0)
+            contextRocket.fillStyle = flame.color
+            contextRocket.fill()
+        }
+    }
+
+    let rocketAnimation = false
+    // document.addEventListener('mousewheel', () =>
+    // {
+    //     if(changeSlide != $content.offsetWidth * 2)
+    //     {
+    //         rocketAnimation = false
+    //     }
+    //     else 
+    //     {
+    //         rocketAnimation = true
+    //     }
+
+    //     if(rocketAnimation)
+    //     {
+    //         loopRocket()
+    //     }
+    // })
+
+    const loopRocket = () => {
+        window.requestAnimationFrame(loopRocket)
+    
+        // pour créer 2 particules à chaque frame
+        if(changeSlide == $content.offsetWidth * 2)
+        {
+            rocketAnimation = true
+        }
+        else 
+        {
+            rocketAnimation = false
+        }
+
+        if(rocketAnimation)
+        {
+            for(let i = 0; i < 2; i++){
+                createFlames()
+            }
+        }
+
+        updateFlames()
+        clearRocket()
+        drawFlames()
+        // console.log(flames)
+    }
+
+    loopRocket()
+    
+
+    
+
+    /* End rocket's JS */
