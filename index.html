@@ -19,6 +19,14 @@
 <body>
     <canvas class="sky"></canvas>
 
+    <div class="loadingScreen">
+        <div class="loader">
+            <span class="value">0</span>
+            <span class="unit">%</span>
+        </div>
+        <p>Loader</p>
+    </div>
+
     <header class="header">
         <div class="logo">
             <a href="http://www.spacex.com/mars"><img src="images/logo.png" alt="Logo"></a>
@@ -92,12 +100,12 @@
     <div class="section">
         <div class="content first not-shown">
             <div class="planet earth planetBounce inSlide">
-                <img src="images/earth.png" alt="EarthPicture" class="earthImage"/>
+                <img src="images/planet/earth.png" alt="EarthPicture" class="earthImage"/>
                 <div class="boxShadow"></div>
                 <div class="clouds">
                     <div class="cloud">
-                        <img src="images/cloud.png" alt="cloud" class="c1" />
-                        <img src="images/cloud2.png" alt="cloud" class="c3" />
+                        <img src="images/planet/cloud.png" alt="cloud" class="c1" />
+                        <img src="images/planet/cloud2.png" alt="cloud" class="c3" />
                     </div>
                 </div>  
             </div>
@@ -168,10 +176,14 @@
         <p class="Solutions">Les scientifiques ont pensé à doubler le module habitable par une épaisse couche d’eau ou à l’envelopper de plantes poussant sur Terre pour former un bouclier anti-radiations partiel. Les astronautes de l'ISS sont eux protégés par le champ magnétique de la Terre.</p>
     </div>
     <div class="text-zone text5 not-active">
-    <p class="Problems">La gravité sur Mars est égale à 38% de la gravité de la terre, ce qui rend l’atterrissage très difficile.</p>
-    <p class="Solutions">La rétropropulsion supersonique que SpaceX développe permettrait de se poser sans trop de soucis, et les derniers essais de décembre 2015 furent concluants donc cette solution paraît totalement envisageable. Ce qui ne laisse présager que du bon pour la suite.</p>
-</div>
+        <p class="Problems">La gravité sur Mars est égale à 38% de la gravité de la terre, ce qui rend l’atterrissage très difficile.</p>
+        <p class="Solutions">La rétropropulsion supersonique que SpaceX développe permettrait de se poser sans trop de soucis, et les derniers essais de décembre 2015 furent concluants donc cette solution paraît totalement envisageable. Ce qui ne laisse présager que du bon pour la suite.</p>
+    </div>
     
-    <script src="js/script.js"></script>
+    <script src="js/update.js"></script>
+    <script src="js/create.js"></script>
+    <script src="js/draw.js"></script>
+    <script src="js/scroll.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>

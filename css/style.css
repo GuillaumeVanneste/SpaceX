@@ -13,6 +13,86 @@ canvas.sky
 }
 /* Start welcome page */
 
+/***********************
+
+    LOADING SCREEN
+
+***********************/
+
+.loadingScreen
+{
+    position: absolute;
+	text-align: center;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    overflow: hidden;
+    opacity: 1;
+    transition: opacity 500ms ease-in;
+    will-change: opacity;
+    z-index: 5;
+}
+
+.loadingScreen.loaded
+{
+    opacity: 0;
+    z-index: 1;
+}
+
+.loadingScreen p
+{
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: 300;
+	font-size: 20px;
+    color: #FFF;
+    text-align: center;
+}
+
+.loadingScreen span
+{
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: 300;
+	font-size: 16px;
+    color: #FFF;
+    text-align: center;
+}
+
+.loadingScreen .loader
+{
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+	top: calc(50% - 43px);
+	left: calc(50% - 43px);
+	height: 80px;
+	width: 80px;
+	border-radius: 50%;
+    border: 3px solid  rgba(255,255,255, .7);
+    
+}
+
+.loadingScreen .loader:after
+{
+	content: "";
+	position: absolute;
+	top: -6px;
+	left: 32px;
+	width: 11px;
+	height: 11px;
+	border-radius: 50%;
+    background-color: #fff;
+    transform-origin: 50% 44px;
+    animation: loader 3s linear infinite;
+}
+
+@keyframes loader
+{
+    0%   { transform:rotate(0deg); }
+    100% { transform:rotate(360deg); }
+}
+
 /******************
 
       HEADER
@@ -29,6 +109,7 @@ header.header
     width: 100%;
     height: 60px;
     background: #000;
+    z-index: 2;
 }
 
 .header .logo
@@ -52,7 +133,7 @@ header.header
 .header .share
 {
     position: absolute;
-    top: 10px;
+    top: 15px;
     right: 0;
     width: 15%;
     height: 100%;
@@ -65,25 +146,22 @@ header.header
     top: 0;
     left: 0;
     border-radius: 50%;
-    transition: transform 300ms cubic-bezier(0.85, 0.07, 0.23, 0.97);
+    transition: transform 300ms ease-in;
     will-change: transform;
 }
 
 .header .share .button .icon
 {
-    display: block;
-    position: absolute;
     width: 40px;
     height: 40px;
-    border-radius: 50%;
 }
 
-.header .share .button.instagram { transform: translateX(75px) }
-.header .share .button.facebook { transform: translateX(150px) }
+.header .share .button.instagram { transform: translateX(75px); }
+.header .share .button.facebook { transform: translateX(150px); }
 
-.header .share .button.facebook:hover { transform: translate(150px, -2px) }
-.header .share .button.twitter:hover { transform: translateY(-2px); }
-.header .share .button.instagram:hover { transform: translate(75px, -2px) }
+.header .share .button.facebook:hover { transform: translate(150px, -3px); }
+.header .share .button.twitter:hover { transform: translateY(-3px); }
+.header .share .button.instagram:hover { transform: translate(75px, -3px); }
 
 
 /******************
@@ -229,48 +307,48 @@ header.header
 
 @keyframes planetBounce
 {
-    0% { transform: translateY(0) }
-    100% { transform: translateY(0.5vw) }
+    0%   { transform: translateY(0); }
+    100% { transform: translateY(0.5vw); }
 }
 
 @keyframes cloud
 {
-    0% { transform: rotateZ(30deg)scale(1.5, 1.5); }
-    50% { transform: rotateZ(165deg)scale(1.5, 1.5); }
+    0%   { transform: rotateZ(30deg)scale(1.5, 1.5); }
+    50%  { transform: rotateZ(165deg)scale(1.5, 1.5); }
     100% { transform: rotateZ(360deg)scale(1.5, 1.5); }
 }
 
 @keyframes cloud2
 {
-    0% { transform: rotateZ(30deg)scale(1.5, 1.5); }
+    0%   { transform: rotateZ(30deg)scale(1.5, 1.5); }
     100% { transform: rotateZ(-330deg)scale(1.5, 1.5); }
 }
 
 @keyframes opacityc1 
 {
-    0% { opacity: 0; }
-    50% { opacity: 1; }
+    0%   { opacity: 0; }
+    50%  { opacity: 1; }
     100% { opacity: 0; }
 }
 
 @keyframes opacityc3
 {
-    0% { opacity: 1; }
-    50% { opacity: 0; }
+    0%   { opacity: 1; }
+    50%  { opacity: 0; }
     100% { opacity: 1; }
 }
 
 @keyframes marsCloudOpacity
 {
-    0% { opacity: 0; }
-    50% { opacity: 0.2; }
+    0%   { opacity: 0; }
+    50%  { opacity: 0.2; }
     100% { opacity: 0; }
 }
 
 @keyframes marsCloud2Opacity
 {
-    0% { opacity: 0.25; }
-    50% { opacity: 0; }
+    0%   { opacity: 0.25; }
+    50%  { opacity: 0; }
     100% { opacity: 0.15; }
 }
 
@@ -282,7 +360,6 @@ header.header
     top: 75%;
     left: 50%;
     transform: translate(-50%);
-   
 }
 
 .main .arrows .arrow
@@ -300,12 +377,12 @@ header.header
     transform: skewY(45deg);
 }
 
-.main .arrows .arrow div:nth-child(2) { transform: translateX(-15%) skewY(-45deg) }
+.main .arrows .arrow div:nth-child(2) { transform: translateX(-15%) skewY(-45deg); }
 
 @keyframes arrowBounce
 {
-    0% {transform: translateY(0)}
-    100% {transform: translateY(0.7vw)}
+    0%   { transform: translateY(0); }
+    100% { transform: translateY(0.7vw); }
 }
 
 
@@ -323,7 +400,7 @@ header.header
     height: 1px;
     background: #ffffff;
     transform: translateX(-50%);
-    z-index: 666;
+    z-index: 4;
 }
 
 .progressBar .checkpoints
@@ -368,7 +445,8 @@ header.header
         EQUALIZER
 *********************/
   
-.equalizer{
+.equalizer
+{
     position: absolute;
 	bottom: 20px;
 	right: 20px;
@@ -376,6 +454,8 @@ header.header
     width: 4vw;
     height: 3vw;
     font-size: 0;
+    z-index: 6;
+    cursor: pointer;
  }
   
 .equalizer .bar
@@ -386,23 +466,21 @@ header.header
     background: #ccc;
     margin: 0 1%;
     transform-origin: 100% 100%;
-    animation: equalizer-bar-bounce 1.5s infinite;
-    animation-fill-mode: backwards;
+    animation: equalizer-bar-bounce 1.5s infinite backwards;
     will-change: transform;
 }
 
 .equalizer.muted .bar
 {
     animation-play-state: paused;
-    transform: scaleY(0.1);
 }
 
 @keyframes equalizer-bar-bounce
 {
-    0% { transform: scaleY(0.1); }
-    10% { transform: scaleY(0.86); }
-    50% { transform: scaleY(0.33); }
-    70% { transform: scaleY(0.68); }
+    0%   { transform: scaleY(0.1); }
+    10%  { transform: scaleY(0.86); }
+    50%  { transform: scaleY(0.33); }
+    70%  { transform: scaleY(0.68); }
     100% { transform: scaleY(0.1); }
 }
   
@@ -465,7 +543,7 @@ header.header
     width: 155%;
     height: 100%;
     background-color: #f1f1f1;
-    z-index: 10;
+    z-index: 3;
     position: fixed; 
     transform: translateX(40%) skew(20deg);
     will-change: transform;
@@ -593,37 +671,43 @@ canvas {
     will-change: transform;
 }
 
-@keyframes planetBounce {
-    0%   { transform: translateY(0) }
-    100% { transform: translateY(0.5vw) }
+@keyframes planetBounce 
+{
+    0%   { transform: translateY(0); }
+    100% { transform: translateY(0.5vw); }
 }
 
-@keyframes cloud {
-    0%   { transform: rotateZ(30deg) scale(1.5, 1.5) }
-    50%  { transform: rotateZ(165deg) scale(1.5, 1.5) }
-    100% { transform: rotateZ(360deg) scale(1.5, 1.5) }
+@keyframes cloud 
+{
+    0%   { transform: rotateZ(30deg) scale(1.5, 1.5);}
+    50%  { transform: rotateZ(165deg) scale(1.5, 1.5); }
+    100% { transform: rotateZ(360deg) scale(1.5, 1.5); }
 }
 
-@keyframes cloud2 {
-    0%   { transform: rotateZ(30deg) scale(1.5, 1.5) }
-    100% { transform: rotateZ(-330deg) scale(1.5, 1.5) }
+@keyframes cloud2 
+{
+    0%   { transform: rotateZ(30deg) scale(1.5, 1.5); }
+    100% { transform: rotateZ(-330deg) scale(1.5, 1.5); }
 }
 
-@keyframes opacityc1 {
-    0%   { opacity: 0 }
-    50%  { opacity: 1 }
-    100% { opacity: 0 }
+@keyframes opacityc1 
+{
+    0%   { opacity: 0; }
+    50%  { opacity: 1; }
+    100% { opacity: 0; }
 }
 
-@keyframes opacityc3 {
-    0%   { opacity: 1 }
-    50%  { opacity: 0 }
-    100% { opacity: 1 }
+@keyframes opacityc3 
+{
+    0%   { opacity: 1; }
+    50%  { opacity: 0; }
+    100% { opacity: 1; }
 }
 
 /** ROCKET PART **/
 
-.first .rocket_container {
+.first .rocket_container 
+{
     width: 300px;
     height: 450px;
     position: absolute;
@@ -639,35 +723,28 @@ canvas {
     transform: rotate(90deg) scale(1);
 }
 
-.third .flames {
+.third .flames 
+{
     transform: rotate(180deg)  translate(30px, 0px);
 }
 
 
 /*   ROCKET ANIMATION   */
 
-@keyframes rocket-animation-earth {
-    0% {
-        transform: scale(0.05) rotate(-90deg) translateY(-20%);
-    }
-    20% {
-        transform: rotate(-90deg) scale(0.1) translateX(-60%);
-    }
-    60% {
-        transform: rotate(-90deg) scale(0.1) translate(15%, -240%);
-    }
-    80% {
-        transform: rotate(-90deg) scale(0.7) translateY(-230%);
-    }
-    100% {
-        transform: rotate(-90deg) translateY(-170%);
-    }
+@keyframes rocket-animation-earth 
+{
+    0%   { transform: scale(0.05) rotate(-90deg) translateY(-20%); }
+    20%  { transform: rotate(-90deg) scale(0.1) translateX(-60%); }
+    60%  { transform: rotate(-90deg) scale(0.1) translate(15%, -240%); }
+    80%  { transform: rotate(-90deg) scale(0.7) translateY(-230%); }
+    100% { transform: rotate(-90deg) translateY(-170%); }
 }
 
 /* Earth CSS end */
 
 /* Rocket's CSS */
-.rocket_container_bis{
+.rocket_container_bis
+{
     width: 300px;
     height: 450px;
     position: absolute;
@@ -680,7 +757,8 @@ canvas {
     transform: translate(55vw, 15vw) rotate(90deg);
 }
 
-.rocket{
+.rocket
+{
     width: 80%;
     height: 100%;
     background-color: transparent;
@@ -702,13 +780,14 @@ canvas.flames
     width: 46px;
 }
 
-@keyframes rocket-animation{
-    0%   {  transform: translate(5vw, 15vw) rotate(90deg) }
-    20%  {  transform: translate(55vw, 15vw) rotate(90deg) }
-    40%  {  transform: scale(0.5) translate(50vw, 3vw) rotate(90deg) }
-    60%  {  transform: scale(0.5) translate(130vw, 3vw) rotate(90deg) }
-    80%  {  transform: scale(1.5) translate(5vw, 17vw) rotate(90deg) }
-    100% {  transform: scale(1.5) translate(185vw, 17vw) rotate(90deg) }
+@keyframes rocket-animation
+{
+    0%   { transform: translate(5vw, 15vw) rotate(90deg); }
+    20%  { transform: translate(55vw, 15vw) rotate(90deg); }
+    40%  { transform: scale(0.5) translate(50vw, 3vw) rotate(90deg); }
+    60%  { transform: scale(0.5) translate(130vw, 3vw) rotate(90deg); }
+    80%  { transform: scale(1.5) translate(5vw, 17vw) rotate(90deg); }
+    100% { transform: scale(1.5) translate(185vw, 17vw) rotate(90deg); }
 }
 
 /* Rocket's CSS end */
