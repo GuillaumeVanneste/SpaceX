@@ -247,3 +247,151 @@ document.addEventListener('mousewheel', (event) =>
         1000)
     }
 })
+
+// Variables
+const $progressBar = document.querySelector('.progressBar')
+const $checkpoint1 = $progressBar.querySelector('.checkpoint-1')
+const $checkpoint2 = $progressBar.querySelector('.checkpoint-2')
+const $checkpoint3 = $progressBar.querySelector('.checkpoint-3')
+const $checkpoint4 = $progressBar.querySelector('.checkpoint-4')
+const $checkpoint5 = $progressBar.querySelector('.checkpoint-5')
+
+// Listen to mouse down on the frist checkpoint on the progress bar
+$checkpoint1.addEventListener('mousedown', () =>
+{
+    changeSlide = 1
+    $page.classList.add('transition')
+
+    // Check the checkpoint cliced and all checkpoint before
+    $checkpoint1.classList.add('isActive')
+    $checkpoint2.classList.remove('isActive')
+    $checkpoint3.classList.remove('isActive')
+    $checkpoint4.classList.remove('isActive')
+    $checkpoint5.classList.remove('isActive')
+
+    $main.classList.add('not-shown')
+    $slide1.classList.remove('not-shown')
+    $slide2.classList.add('not-shown')
+    $slide3.classList.add('not-shown')
+    $slide4.classList.add('not-shown')
+    $slide5.classList.add('not-shown')
+    $page.classList.remove('not-shown')
+
+    $text1.classList.remove('not-active')
+    $text2.classList.add('not-active')
+    $text3.classList.add('not-active')
+    $text4.classList.add('not-active')
+    $text5.classList.add('not-active')
+})
+
+// Listen to mouse down on the second checkpoint on the progress bar
+$checkpoint2.addEventListener('mousedown', () =>
+{
+    changeSlide = 2
+    $page.classList.remove('transition')
+
+    // Check the checkpoint cliced and all checkpoint before
+    $checkpoint1.classList.add('isActive')
+    $checkpoint2.classList.add('isActive')
+    $checkpoint3.classList.remove('isActive')
+    $checkpoint4.classList.remove('isActive')
+    $checkpoint5.classList.remove('isActive')
+
+    $main.classList.add('not-shown')
+    $slide1.classList.add('not-shown')
+    $slide2.classList.remove('not-shown')
+    $slide3.classList.add('not-shown')
+    $slide4.classList.add('not-shown')
+    $slide5.classList.add('not-shown')
+    $page.classList.remove('not-shown')
+
+    $text1.classList.add('not-active')
+    $text2.classList.remove('not-active')
+    $text3.classList.add('not-active')
+    $text4.classList.add('not-active')
+    $text5.classList.add('not-active')
+})
+
+// Listen to mouse down on the third checkpoint on the progress bar
+$checkpoint3.addEventListener('mousedown', () =>
+{
+    changeSlide = 3
+    $page.classList.add('transition')
+
+    // Check the checkpoint cliced and all checkpoint before
+    $checkpoint1.classList.add('isActive')
+    $checkpoint2.classList.add('isActive')
+    $checkpoint3.classList.add('isActive')
+    $checkpoint4.classList.remove('isActive')
+    $checkpoint5.classList.remove('isActive')
+
+    $main.classList.add('not-shown')
+    $slide1.classList.add('not-shown')
+    $slide2.classList.add('not-shown')
+    $slide3.classList.remove('not-shown')
+    $slide4.classList.add('not-shown')
+    $slide5.classList.add('not-shown')
+    $page.classList.remove('not-shown')
+
+    $text1.classList.add('not-active')
+    $text2.classList.add('not-active')
+    $text3.classList.remove('not-active')
+    $text4.classList.add('not-active')
+    $text5.classList.add('not-active')
+})
+
+// Listen to mouse down on the fourth checkpoint on the progress bar
+$checkpoint4.addEventListener('mousedown', () =>
+{
+    changeSlide = 4
+    $page.classList.remove('transition')
+
+    // Check the checkpoint cliced and all checkpoint before
+    $checkpoint1.classList.add('isActive')
+    $checkpoint2.classList.add('isActive')
+    $checkpoint3.classList.add('isActive')
+    $checkpoint4.classList.add('isActive')
+    $checkpoint5.classList.remove('isActive')
+
+    $main.classList.add('not-shown')
+    $slide1.classList.add('not-shown')
+    $slide2.classList.add('not-shown')
+    $slide3.classList.add('not-shown')
+    $slide4.classList.remove('not-shown')
+    $slide5.classList.add('not-shown')
+    $page.classList.remove('not-shown')
+
+    $text1.classList.add('not-active')
+    $text2.classList.add('not-active')
+    $text3.classList.add('not-active')
+    $text4.classList.remove('not-active')
+    $text5.classList.add('not-active')
+})
+
+// Listen to mouse down on the fifth checkpoint on the progress bar
+$checkpoint5.addEventListener('mousedown', () =>
+{
+    changeSlide = 5
+    $page.classList.add('transition')
+
+    // Check the checkpoint cliced and all checkpoint before
+    $checkpoint1.classList.add('isActive')
+    $checkpoint2.classList.add('isActive')
+    $checkpoint3.classList.add('isActive')
+    $checkpoint4.classList.add('isActive')
+    $checkpoint5.classList.add('isActive')
+
+    $main.classList.add('not-shown')
+    $slide1.classList.add('not-shown')
+    $slide2.classList.add('not-shown')
+    $slide3.classList.add('not-shown')
+    $slide4.classList.add('not-shown')
+    $slide5.classList.remove('not-shown')
+    $page.classList.remove('not-shown')
+
+    $text1.classList.add('not-active')
+    $text2.classList.add('not-active')
+    $text3.classList.add('not-active')
+    $text4.classList.add('not-active')
+    $text5.classList.remove('not-active')
+})
