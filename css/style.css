@@ -628,7 +628,7 @@ canvas {
     height: 450px;
     position: absolute;
     top: 30vh;
-    left: 48vw;
+    left: 50vw;
     animation-name: rocket-animation-earth;
     animation-duration: 10s;
     animation-timing-function: ease-in-out;
@@ -657,7 +657,7 @@ canvas {
         transform: rotate(-90deg) scale(0.1) translate(15%, -240%);
     }
     80% {
-        transform: rotate(-90deg) scale(0.7) translateY(-170%);
+        transform: rotate(-90deg) scale(0.7) translateY(-230%);
     }
     100% {
         transform: rotate(-90deg) translateY(-170%);
