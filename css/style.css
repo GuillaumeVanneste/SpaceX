@@ -454,7 +454,7 @@ header.header
 
 .end-rocket-reactor
 {
-    transform: scale(18.5) rotate(90deg) translate(3vh, -5vw);
+    transform: scale(18.5) rotate(90deg) translate(3vh, -4vw);
     width: 60px;
     height: 70px;
     transform-origin: 50% 50%;
@@ -533,7 +533,7 @@ canvas {
 
 .planet.earth.inSlide {
     position: absolute;
-    top: 38vh;
+    top: 57vh;
     z-index: 2;
     left: 54vw;
     border-radius: 100%;
