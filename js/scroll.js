@@ -36,7 +36,7 @@ const $rocketReactor = document.querySelector('.rocket-reac-sup')
 
 window.addEventListener('mousedown', () =>
 {
-    if(changeSlide % 2 == 1)
+    if(changeSlide % 2 == 1 || changeSlide == 0)
     {
         $page.classList.add('transition')
     } else
@@ -47,7 +47,7 @@ window.addEventListener('mousedown', () =>
 
 window.addEventListener('mousewheel', () =>
 {
-    if(changeSlide % 2 == 1)
+    if(changeSlide % 2 == 1 || changeSlide == 0)
     {
         $page.classList.add('transition')
     } else

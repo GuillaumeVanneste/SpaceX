@@ -56,7 +56,6 @@ canvas.sky
 
 .loadingScreen .loader
 {
-    
     display: flex;
     align-items: center;
     justify-content: center;
@@ -140,7 +139,7 @@ header.header
     display: block;
     position: absolute;
     top: 0;
-    left: 0;
+    right: 20px;
     border-radius: 50%;
     transition: transform 300ms ease-in;
     will-change: transform;
@@ -148,16 +147,16 @@ header.header
 
 .header .share .button .icon
 {
-    width: 40px;
-    height: 40px;
+    width: 2.5vw;
+    height: 2.5vw;
 }
 
-.header .share .button.instagram { transform: translateX(75px); }
-.header .share .button.facebook { transform: translateX(150px); }
+.header .share .button.instagram { transform: translateX(-75px); }
+.header .share .button.facebook { transform: translateX(-150px); }
 
-.header .share .button.facebook:hover { transform: translate(150px, -3px); }
+.header .share .button.facebook:hover { transform: translate(-150px, -3px); }
 .header .share .button.twitter:hover { transform: translateY(-3px); }
-.header .share .button.instagram:hover { transform: translate(75px, -3px); }
+.header .share .button.instagram:hover { transform: translate(-75px, -3px); }
 
 
 /******************
@@ -166,7 +165,14 @@ header.header
 
 .main
 {
-	z-index: 1
+    z-index: 1;
+    transition: opacity 500ms ease-in;
+    will-change: opacity;
+}
+
+.main .not-shown
+{
+    opacity: 0;
 }
 
 .main h1.title
@@ -495,9 +501,15 @@ header.header
     position: fixed;
 }
 
+.content.first
+{
+    transition: opacity 500ms ease-in;
+    will-change: opacity;
+}
+
 .not-shown
 {
-    visibility: hidden;
+    opacity: 0;
 }
 
 .content.first, 
@@ -542,8 +554,8 @@ header.header
     z-index: 3;
     position: fixed; 
     transform: translateX(40%) skew(20deg);
-    will-change: transform;
-    transition: transform 2s ease;
+    transition: transform 2s ease, opacity 500ms ease-in;
+    will-change: transform, opacity;
 }
 
 .transition
@@ -564,22 +576,22 @@ header.header
 
 .text-zone .problems
 {
+    padding-top: 10%;
     font-family: 'Share Tech', sans-serif;
-    font-size: 1.7vw;
-    font-weight: bold;  
+    font-size: 1.3vw;
+    font-weight: bold;
 }
 
 .text-zone .solutions
 {
     font-family: 'Catamaran', sans-serif;
     margin-top: 2.5em;
-    font-size: 1.55vw;
+    font-size: 1.15vw;
 }
 
 .text1, .text3, .text5
 {  
     left: 5%;
-    
 }
 
 .text2, .text4
@@ -708,14 +720,9 @@ canvas {
     position: absolute;
     top: 30vh;
     left: 50vw;
-    animation-name: rocket-animation-earth;
-    animation-duration: 10s;
-    animation-timing-function: ease-in-out;
-    animation-play-state: running;
-    animation-iteration-count: infinite;
-    animation-direction: normal;
-    will-change: transform;
+    animation: rocket-animation-earth 9s linear infinite running;
     transform: rotate(90deg) scale(1);
+    will-change: transform;
 }
 
 .third .flames 
@@ -728,11 +735,10 @@ canvas {
 
 @keyframes rocket-animation-earth 
 {
-    0%   { transform: scale(0.05) rotate(-90deg) translateY(-20%); }
-    20%  { transform: rotate(-90deg) scale(0.1) translateX(-60%); }
-    60%  { transform: rotate(-90deg) scale(0.1) translate(15%, -240%); }
-    80%  { transform: rotate(-90deg) scale(0.7) translateY(-230%); }
-    100% { transform: rotate(-90deg) translateY(-170%); }
+    0%   { transform: scale(0.05); }
+    20%  { top: -10%; left: 45%; transform: rotate(10deg) scale(0.1); }
+    60%  { top: -20%; left: 60%; transform: rotate(90deg) scale(0.2); }
+    100% { top: -20%; left: 200%; transform: rotate(90deg) scale(0.5); }
 }
 
 /* Earth CSS end */
