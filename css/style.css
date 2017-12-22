@@ -5,6 +5,9 @@ body
     box-sizing: border-box;
 }
 
+h1, h2 { font-family: 'Share Tech', Arial, sans-serif; }
+p { font-family: 'Catamaran', Arial, sans-serif; }
+
 canvas.sky
 {
 	position: absolute;
@@ -166,7 +169,7 @@ header.header
 .main
 {
     z-index: 1;
-    transition: opacity 500ms ease-in;
+    transition: opacity 350ms ease-in;
     will-change: opacity;
 }
 
@@ -503,7 +506,7 @@ header.header
 
 .content.first
 {
-    transition: opacity 500ms ease-in;
+    transition: opacity 350ms ease-in;
     will-change: opacity;
 }
 
