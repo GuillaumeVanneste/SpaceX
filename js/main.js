@@ -19,7 +19,7 @@ const loadingCountdown = () =>
     console.log(loading)
 }
 
-window.setInterval(loadingCountdown, 1)
+window.setInterval(loadingCountdown, 75)
 
 
 const $equalizer = document.querySelector('.equalizer')

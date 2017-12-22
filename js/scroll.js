@@ -19,6 +19,28 @@ const $slide5 = document.querySelector('.fifth')
 
 const $rocketReactor = document.querySelector('.rocket-reac-sup')
 
+window.addEventListener('mousedown', () =>
+{
+    if(changeSlide % 2 == 1)
+    {
+        $page.classList.add('transition')
+    } else
+    {
+        $page.classList.remove('transition')
+    }
+})
+
+window.addEventListener('mousewheel', () =>
+{
+    if(changeSlide % 2 == 1)
+    {
+        $page.classList.add('transition')
+    } else
+    {
+        $page.classList.remove('transition')
+    }
+})
+
 document.addEventListener('mousewheel', (event) =>
 {
     event.preventDefault()
@@ -30,22 +52,10 @@ document.addEventListener('mousewheel', (event) =>
         //TRANSITIONS
         if(!(event.deltaX > 0 || event.deltaX < 0))
         {
-            if(changeSlide == 1 && event.deltaY < 0)
-            {
-                $page.classList.remove('transition')
-            } else if(changeSlide >= 1 )
-            {
-                $page.classList.toggle('transition')
-            }
     
             // changing slides in function of the transition
             if(changeSlide != 5 || event.deltaY <= 0)
-            {
-                if(changeSlide > 0)
-                {
-                    $page.classList.toggle('transition')
-                }
-                
+            {                
                 if(event.deltaY > 0)
                 {
                     changeSlide++
@@ -60,6 +70,7 @@ document.addEventListener('mousewheel', (event) =>
                             $slide4.classList.add('not-shown')
                             $slide5.classList.add('not-shown')
                             $page.classList.add('not-shown')
+                            
                         } else if(changeSlide == 1)
                         {
                             $main.classList.add('not-shown')
@@ -69,6 +80,7 @@ document.addEventListener('mousewheel', (event) =>
                             $slide4.classList.add('not-shown')
                             $slide5.classList.add('not-shown')
                             $page.classList.remove('not-shown')
+                            $checkpoint1.classList.add('isActive')
                             
                         } else if(changeSlide == 2)
                         {
@@ -79,6 +91,7 @@ document.addEventListener('mousewheel', (event) =>
                             $slide4.classList.add('not-shown')
                             $slide5.classList.add('not-shown')
                             $page.classList.remove('not-shown')
+                            $checkpoint2.classList.add('isActive')
                             
                         } else if(changeSlide == 3)
                         {
@@ -89,6 +102,7 @@ document.addEventListener('mousewheel', (event) =>
                             $slide4.classList.add('not-shown')
                             $slide5.classList.add('not-shown')
                             $page.classList.remove('not-shown')
+                            $checkpoint3.classList.add('isActive')
                             
                         } else if(changeSlide == 4)
                         {
@@ -99,6 +113,7 @@ document.addEventListener('mousewheel', (event) =>
                             $slide4.classList.remove('not-shown')
                             $slide5.classList.add('not-shown')
                             $page.classList.remove('not-shown')
+                            $checkpoint4.classList.add('isActive')
                             
                         } else if(changeSlide == 5)
                         {
@@ -109,7 +124,7 @@ document.addEventListener('mousewheel', (event) =>
                             $slide4.classList.add('not-shown')
                             $slide5.classList.remove('not-shown')
                             $page.classList.remove('not-shown')
-                            
+                            $checkpoint5.classList.add('isActive')
                         }
                     }, 500)
     
@@ -122,7 +137,6 @@ document.addEventListener('mousewheel', (event) =>
     
             if(changeSlide != 0 || event.deltaY >= 0)
             {
-                $page.classList.toggle('transition')
                 if(event.deltaY < 0)
                 {
                     changeSlide--
@@ -138,6 +152,7 @@ document.addEventListener('mousewheel', (event) =>
                             $slide4.classList.add('not-shown')
                             $slide5.classList.add('not-shown')
                             $page.classList.add('not-shown')
+                            $checkpoint1.classList.remove('isActive')
                         } else if(changeSlide == 1)
                         {
                             $main.classList.add('not-shown')
@@ -146,7 +161,8 @@ document.addEventListener('mousewheel', (event) =>
                             $slide3.classList.add('not-shown')
                             $slide4.classList.add('not-shown')
                             $slide5.classList.add('not-shown')
-                            $page.classList.remove('not-shown')                        
+                            $page.classList.remove('not-shown')
+                            $checkpoint2.classList.remove('isActive')                     
                         } else if(changeSlide == 2)
                         {
                             $main.classList.add('not-shown')
@@ -156,6 +172,7 @@ document.addEventListener('mousewheel', (event) =>
                             $slide4.classList.add('not-shown')
                             $slide5.classList.add('not-shown')
                             $page.classList.remove('not-shown')
+                            $checkpoint3.classList.remove('isActive')
                         } else if(changeSlide == 3)
                         {
                             $main.classList.add('not-shown')
@@ -165,6 +182,7 @@ document.addEventListener('mousewheel', (event) =>
                             $slide4.classList.add('not-shown')
                             $slide5.classList.add('not-shown')
                             $page.classList.remove('not-shown')
+                            $checkpoint4.classList.remove('isActive')
                         } else if(changeSlide == 4)
                         {
                             $main.classList.add('not-shown')
@@ -174,6 +192,7 @@ document.addEventListener('mousewheel', (event) =>
                             $slide4.classList.remove('not-shown')
                             $slide5.classList.add('not-shown')
                             $page.classList.remove('not-shown')
+                            $checkpoint5.classList.remove('isActive')
                         } else if(changeSlide == 5)
                         {
                             $main.classList.add('not-shown')
@@ -260,7 +279,6 @@ const $checkpoint5 = $progressBar.querySelector('.checkpoint-5')
 $checkpoint1.addEventListener('mousedown', () =>
 {
     changeSlide = 1
-    $page.classList.add('transition')
 
     // Check the checkpoint cliced and all checkpoint before
     $checkpoint1.classList.add('isActive')
@@ -288,7 +306,6 @@ $checkpoint1.addEventListener('mousedown', () =>
 $checkpoint2.addEventListener('mousedown', () =>
 {
     changeSlide = 2
-    $page.classList.remove('transition')
 
     // Check the checkpoint cliced and all checkpoint before
     $checkpoint1.classList.add('isActive')
@@ -316,7 +333,6 @@ $checkpoint2.addEventListener('mousedown', () =>
 $checkpoint3.addEventListener('mousedown', () =>
 {
     changeSlide = 3
-    $page.classList.add('transition')
 
     // Check the checkpoint cliced and all checkpoint before
     $checkpoint1.classList.add('isActive')
@@ -344,7 +360,6 @@ $checkpoint3.addEventListener('mousedown', () =>
 $checkpoint4.addEventListener('mousedown', () =>
 {
     changeSlide = 4
-    $page.classList.remove('transition')
 
     // Check the checkpoint cliced and all checkpoint before
     $checkpoint1.classList.add('isActive')
@@ -372,7 +387,6 @@ $checkpoint4.addEventListener('mousedown', () =>
 $checkpoint5.addEventListener('mousedown', () =>
 {
     changeSlide = 5
-    $page.classList.add('transition')
 
     // Check the checkpoint cliced and all checkpoint before
     $checkpoint1.classList.add('isActive')
