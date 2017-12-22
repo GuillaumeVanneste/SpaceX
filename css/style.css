@@ -41,21 +41,18 @@ canvas.sky
 
 .loadingScreen p
 {
+    position: absolute;
+    top: 65%;
+    left: 50%;
 	font-family: Arial, Helvetica, sans-serif;
 	font-weight: 300;
 	font-size: 20px;
     color: #FFF;
     text-align: center;
+    transform: translateX(-50%)
 }
 
-.loadingScreen span
-{
-	font-family: Arial, Helvetica, sans-serif;
-	font-weight: 300;
-	font-size: 16px;
-    color: #FFF;
-    text-align: center;
-}
+.loadingScreen p + p { top: 72% }
 
 .loadingScreen .loader
 {
@@ -70,7 +67,6 @@ canvas.sky
 	width: 80px;
 	border-radius: 50%;
     border: 3px solid  rgba(255,255,255, .7);
-    
 }
 
 .loadingScreen .loader:after
@@ -563,18 +559,17 @@ header.header
     top: 10%;
     z-index: 15;
     will-change: opacity;
-    transition: opacity 1s ease;
-    
+    transition: opacity 1s 500ms ease;
 }
 
-.Problems
+.text-zone .problems
 {
     font-family: 'Share Tech', sans-serif;
     font-size: 1.7vw;
     font-weight: bold;  
 }
 
-.Solutions
+.text-zone .solutions
 {
     font-family: 'Catamaran', sans-serif;
     margin-top: 2.5em;

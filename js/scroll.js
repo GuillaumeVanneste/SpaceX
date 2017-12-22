@@ -1,3 +1,18 @@
+/* Loader */
+
+const $loader = document.querySelector('.loadingScreen')
+let loaded = false
+
+window.addEventListener('load', (event) =>
+{
+    console.log(event)
+    $loader.classList.add('loaded')
+    loaded = true
+})
+
+/* end loader */
+
+
 const $content = document.querySelector('.content')
 let changeSlide = 0
 
@@ -41,231 +56,236 @@ window.addEventListener('mousewheel', () =>
     }
 })
 
+// Listen to scroll on window
 document.addEventListener('mousewheel', (event) =>
 {
-    event.preventDefault()
-
-    if(!animationIsActive)
+    if(loaded) // Wait the end of the loader to scroll
     {
-        animationIsActive = true
+        event.preventDefault()
 
-        //TRANSITIONS
-        if(!(event.deltaX > 0 || event.deltaX < 0))
+        if(!animationIsActive)
         {
-    
-            // changing slides in function of the transition
-            if(changeSlide != 5 || event.deltaY <= 0)
-            {                
-                if(event.deltaY > 0)
-                {
-                    changeSlide++
-                    setTimeout(() =>
-                    {
-                        if(changeSlide == 0)
-                        {
-                            $main.classList.remove('not-shown')
-                            $slide1.classList.add('not-shown')
-                            $slide2.classList.add('not-shown')
-                            $slide3.classList.add('not-shown')
-                            $slide4.classList.add('not-shown')
-                            $slide5.classList.add('not-shown')
-                            $page.classList.add('not-shown')
-                            
-                        } else if(changeSlide == 1)
-                        {
-                            $main.classList.add('not-shown')
-                            $slide1.classList.remove('not-shown')
-                            $slide2.classList.add('not-shown')
-                            $slide3.classList.add('not-shown')
-                            $slide4.classList.add('not-shown')
-                            $slide5.classList.add('not-shown')
-                            $page.classList.remove('not-shown')
-                            $checkpoint1.classList.add('isActive')
-                            
-                        } else if(changeSlide == 2)
-                        {
-                            $main.classList.add('not-shown')                        
-                            $slide1.classList.add('not-shown')
-                            $slide2.classList.remove('not-shown')
-                            $slide3.classList.add('not-shown')
-                            $slide4.classList.add('not-shown')
-                            $slide5.classList.add('not-shown')
-                            $page.classList.remove('not-shown')
-                            $checkpoint2.classList.add('isActive')
-                            
-                        } else if(changeSlide == 3)
-                        {
-                            $main.classList.add('not-shown')                        
-                            $slide1.classList.add('not-shown')
-                            $slide2.classList.add('not-shown')
-                            $slide3.classList.remove('not-shown')
-                            $slide4.classList.add('not-shown')
-                            $slide5.classList.add('not-shown')
-                            $page.classList.remove('not-shown')
-                            $checkpoint3.classList.add('isActive')
-                            
-                        } else if(changeSlide == 4)
-                        {
-                            $main.classList.add('not-shown')
-                            $slide1.classList.add('not-shown')
-                            $slide2.classList.add('not-shown')
-                            $slide3.classList.add('not-shown')
-                            $slide4.classList.remove('not-shown')
-                            $slide5.classList.add('not-shown')
-                            $page.classList.remove('not-shown')
-                            $checkpoint4.classList.add('isActive')
-                            
-                        } else if(changeSlide == 5)
-                        {
-                            $main.classList.add('not-shown')
-                            $slide1.classList.add('not-shown')
-                            $slide2.classList.add('not-shown')
-                            $slide3.classList.add('not-shown')
-                            $slide4.classList.add('not-shown')
-                            $slide5.classList.remove('not-shown')
-                            $page.classList.remove('not-shown')
-                            $checkpoint5.classList.add('isActive')
-                        }
-                    }, 500)
-    
-                    if(changeSlide > 5)
-                    {
-                        changeSlide = 5
-                    }
-                }
-            }
-    
-            if(changeSlide != 0 || event.deltaY >= 0)
+            animationIsActive = true
+
+
+            if(!(event.deltaX > 0 || event.deltaX < 0))
             {
-                if(event.deltaY < 0)
-                {
-                    changeSlide--
-    
-                    setTimeout(() =>
+        
+                // changing slides in function of the transition
+                if(changeSlide != 5 || event.deltaY <= 0)
+                {                
+                    if(event.deltaY > 0)
                     {
-                        if(changeSlide == 0)
+                        changeSlide++
+                        setTimeout(() =>
                         {
-                            $main.classList.remove('not-shown')
-                            $slide1.classList.add('not-shown')
-                            $slide2.classList.add('not-shown')
-                            $slide3.classList.add('not-shown')
-                            $slide4.classList.add('not-shown')
-                            $slide5.classList.add('not-shown')
-                            $page.classList.add('not-shown')
-                            $checkpoint1.classList.remove('isActive')
-                        } else if(changeSlide == 1)
+                            if(changeSlide == 0)
+                            {
+                                $main.classList.remove('not-shown')
+                                $slide1.classList.add('not-shown')
+                                $slide2.classList.add('not-shown')
+                                $slide3.classList.add('not-shown')
+                                $slide4.classList.add('not-shown')
+                                $slide5.classList.add('not-shown')
+                                $page.classList.add('not-shown')
+                                
+                            } else if(changeSlide == 1)
+                            {
+                                $main.classList.add('not-shown')
+                                $slide1.classList.remove('not-shown')
+                                $slide2.classList.add('not-shown')
+                                $slide3.classList.add('not-shown')
+                                $slide4.classList.add('not-shown')
+                                $slide5.classList.add('not-shown')
+                                $page.classList.remove('not-shown')
+                                $checkpoint1.classList.add('isActive')
+                                
+                            } else if(changeSlide == 2)
+                            {
+                                $main.classList.add('not-shown')                        
+                                $slide1.classList.add('not-shown')
+                                $slide2.classList.remove('not-shown')
+                                $slide3.classList.add('not-shown')
+                                $slide4.classList.add('not-shown')
+                                $slide5.classList.add('not-shown')
+                                $page.classList.remove('not-shown')
+                                $checkpoint2.classList.add('isActive')
+                                
+                            } else if(changeSlide == 3)
+                            {
+                                $main.classList.add('not-shown')                        
+                                $slide1.classList.add('not-shown')
+                                $slide2.classList.add('not-shown')
+                                $slide3.classList.remove('not-shown')
+                                $slide4.classList.add('not-shown')
+                                $slide5.classList.add('not-shown')
+                                $page.classList.remove('not-shown')
+                                $checkpoint3.classList.add('isActive')
+                                
+                            } else if(changeSlide == 4)
+                            {
+                                $main.classList.add('not-shown')
+                                $slide1.classList.add('not-shown')
+                                $slide2.classList.add('not-shown')
+                                $slide3.classList.add('not-shown')
+                                $slide4.classList.remove('not-shown')
+                                $slide5.classList.add('not-shown')
+                                $page.classList.remove('not-shown')
+                                $checkpoint4.classList.add('isActive')
+                                
+                            } else if(changeSlide == 5)
+                            {
+                                $main.classList.add('not-shown')
+                                $slide1.classList.add('not-shown')
+                                $slide2.classList.add('not-shown')
+                                $slide3.classList.add('not-shown')
+                                $slide4.classList.add('not-shown')
+                                $slide5.classList.remove('not-shown')
+                                $page.classList.remove('not-shown')
+                                $checkpoint5.classList.add('isActive')
+                            }
+                        }, 500)
+        
+                        if(changeSlide > 5)
                         {
-                            $main.classList.add('not-shown')
-                            $slide1.classList.remove('not-shown')
-                            $slide2.classList.add('not-shown')
-                            $slide3.classList.add('not-shown')
-                            $slide4.classList.add('not-shown')
-                            $slide5.classList.add('not-shown')
-                            $page.classList.remove('not-shown')
-                            $checkpoint2.classList.remove('isActive')                     
-                        } else if(changeSlide == 2)
-                        {
-                            $main.classList.add('not-shown')
-                            $slide1.classList.add('not-shown')
-                            $slide2.classList.remove('not-shown')
-                            $slide3.classList.add('not-shown')
-                            $slide4.classList.add('not-shown')
-                            $slide5.classList.add('not-shown')
-                            $page.classList.remove('not-shown')
-                            $checkpoint3.classList.remove('isActive')
-                        } else if(changeSlide == 3)
-                        {
-                            $main.classList.add('not-shown')
-                            $slide1.classList.add('not-shown')
-                            $slide2.classList.add('not-shown')
-                            $slide3.classList.remove('not-shown')
-                            $slide4.classList.add('not-shown')
-                            $slide5.classList.add('not-shown')
-                            $page.classList.remove('not-shown')
-                            $checkpoint4.classList.remove('isActive')
-                        } else if(changeSlide == 4)
-                        {
-                            $main.classList.add('not-shown')
-                            $slide1.classList.add('not-shown')
-                            $slide2.classList.add('not-shown')
-                            $slide3.classList.add('not-shown')
-                            $slide4.classList.remove('not-shown')
-                            $slide5.classList.add('not-shown')
-                            $page.classList.remove('not-shown')
-                            $checkpoint5.classList.remove('isActive')
-                        } else if(changeSlide == 5)
-                        {
-                            $main.classList.add('not-shown')
-                            $slide1.classList.add('not-shown')
-                            $slide2.classList.add('not-shown')
-                            $slide3.classList.add('not-shown')
-                            $slide4.classList.add('not-shown')
-                            $slide5.classList.remove('not-shown')
-                            $page.classList.remove('not-shown')
+                            changeSlide = 5
                         }
-                    }, 500)
-    
-                    if(changeSlide < 0)
+                    }
+                }
+        
+                if(changeSlide != 0 || event.deltaY >= 0)
+                {
+                    if(event.deltaY < 0)
                     {
-                        changeSlide = 0
+                        changeSlide--
+        
+                        setTimeout(() =>
+                        {
+                            if(changeSlide == 0)
+                            {
+                                $main.classList.remove('not-shown')
+                                $slide1.classList.add('not-shown')
+                                $slide2.classList.add('not-shown')
+                                $slide3.classList.add('not-shown')
+                                $slide4.classList.add('not-shown')
+                                $slide5.classList.add('not-shown')
+                                $page.classList.add('not-shown')
+                                $checkpoint1.classList.remove('isActive')
+                            } else if(changeSlide == 1)
+                            {
+                                $main.classList.add('not-shown')
+                                $slide1.classList.remove('not-shown')
+                                $slide2.classList.add('not-shown')
+                                $slide3.classList.add('not-shown')
+                                $slide4.classList.add('not-shown')
+                                $slide5.classList.add('not-shown')
+                                $page.classList.remove('not-shown')
+                                $checkpoint2.classList.remove('isActive')                     
+                            } else if(changeSlide == 2)
+                            {
+                                $main.classList.add('not-shown')
+                                $slide1.classList.add('not-shown')
+                                $slide2.classList.remove('not-shown')
+                                $slide3.classList.add('not-shown')
+                                $slide4.classList.add('not-shown')
+                                $slide5.classList.add('not-shown')
+                                $page.classList.remove('not-shown')
+                                $checkpoint3.classList.remove('isActive')
+                            } else if(changeSlide == 3)
+                            {
+                                $main.classList.add('not-shown')
+                                $slide1.classList.add('not-shown')
+                                $slide2.classList.add('not-shown')
+                                $slide3.classList.remove('not-shown')
+                                $slide4.classList.add('not-shown')
+                                $slide5.classList.add('not-shown')
+                                $page.classList.remove('not-shown')
+                                $checkpoint4.classList.remove('isActive')
+                            } else if(changeSlide == 4)
+                            {
+                                $main.classList.add('not-shown')
+                                $slide1.classList.add('not-shown')
+                                $slide2.classList.add('not-shown')
+                                $slide3.classList.add('not-shown')
+                                $slide4.classList.remove('not-shown')
+                                $slide5.classList.add('not-shown')
+                                $page.classList.remove('not-shown')
+                                $checkpoint5.classList.remove('isActive')
+                            } else if(changeSlide == 5)
+                            {
+                                $main.classList.add('not-shown')
+                                $slide1.classList.add('not-shown')
+                                $slide2.classList.add('not-shown')
+                                $slide3.classList.add('not-shown')
+                                $slide4.classList.add('not-shown')
+                                $slide5.classList.remove('not-shown')
+                                $page.classList.remove('not-shown')
+                            }
+                        }, 500)
+        
+                        if(changeSlide < 0)
+                        {
+                            changeSlide = 0
+                        }
                     }
                 }
             }
-        }
 
-        //Change text in function of the transition
-        if(changeSlide == 0)
-        {
-            $text1.classList.add('not-active')
-            $text2.classList.add('not-active')
-            $text3.classList.add('not-active')
-            $text4.classList.add('not-active')
-            $text5.classList.add('not-active')
-        } else if(changeSlide == 1)
-        {
-            $text1.classList.remove('not-active')
-            $text2.classList.add('not-active')
-            $text3.classList.add('not-active')
-            $text4.classList.add('not-active')
-            $text5.classList.add('not-active')
-        } else if(changeSlide == 2)
-        {
-            $text1.classList.add('not-active')
-            $text2.classList.remove('not-active')
-            $text3.classList.add('not-active')
-            $text4.classList.add('not-active')
-            $text5.classList.add('not-active')
-        } else if(changeSlide == 3)
-        {
-            $text1.classList.add('not-active')
-            $text2.classList.add('not-active')
-            $text3.classList.remove('not-active')
-            $text4.classList.add('not-active')
-            $text5.classList.add('not-active')
-        } else if(changeSlide == 4)
-        {
-            $text1.classList.add('not-active')
-            $text2.classList.add('not-active')
-            $text3.classList.add('not-active')
-            $text4.classList.remove('not-active')
-            $text5.classList.add('not-active')
-        } else if(changeSlide == 5)
-        {
-            $text1.classList.add('not-active')
-            $text2.classList.add('not-active')
-            $text3.classList.add('not-active')
-            $text4.classList.add('not-active')
-            $text5.classList.remove('not-active')
-        }
+            //Change text in function of the transition
+            if(changeSlide == 0)
+            {
+                $text1.classList.add('not-active')
+                $text2.classList.add('not-active')
+                $text3.classList.add('not-active')
+                $text4.classList.add('not-active')
+                $text5.classList.add('not-active')
+            } else if(changeSlide == 1)
+            {
+                $text1.classList.remove('not-active')
+                $text2.classList.add('not-active')
+                $text3.classList.add('not-active')
+                $text4.classList.add('not-active')
+                $text5.classList.add('not-active')
+            } else if(changeSlide == 2)
+            {
+                $text1.classList.add('not-active')
+                $text2.classList.remove('not-active')
+                $text3.classList.add('not-active')
+                $text4.classList.add('not-active')
+                $text5.classList.add('not-active')
+            } else if(changeSlide == 3)
+            {
+                $text1.classList.add('not-active')
+                $text2.classList.add('not-active')
+                $text3.classList.remove('not-active')
+                $text4.classList.add('not-active')
+                $text5.classList.add('not-active')
+            } else if(changeSlide == 4)
+            {
+                $text1.classList.add('not-active')
+                $text2.classList.add('not-active')
+                $text3.classList.add('not-active')
+                $text4.classList.remove('not-active')
+                $text5.classList.add('not-active')
+            } else if(changeSlide == 5)
+            {
+                $text1.classList.add('not-active')
+                $text2.classList.add('not-active')
+                $text3.classList.add('not-active')
+                $text4.classList.add('not-active')
+                $text5.classList.remove('not-active')
+            }
 
-        //Delay for next scroll
-        setTimeout(() =>
-        {
-            animationIsActive = false
-        },
-        1000)
+            //Delay for next scroll
+            setTimeout(() =>
+            {
+                animationIsActive = false
+            },
+            1000)
+        }
     }
 })
+
 
 // Variables
 const $progressBar = document.querySelector('.progressBar')
@@ -409,3 +429,4 @@ $checkpoint5.addEventListener('mousedown', () =>
     $text4.classList.add('not-active')
     $text5.classList.remove('not-active')
 })
+

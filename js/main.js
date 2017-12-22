@@ -1,26 +1,5 @@
-/* Main page JS */
 
-const $loader = document.querySelector('.loadingScreen')
-const $value = $loader.querySelector('.value')
-let value = 0
-
-const loadingCountdown = () =>
-{
-    if(value < 100)
-    {
-        value++
-        $value.textContent = value
-        loading = false
-    } else 
-    {
-        $loader.classList.add('loaded')
-        loaded = true
-    }
-    console.log(loading)
-}
-
-window.setInterval(loadingCountdown, 75)
-
+/* equalizer */
 
 const $equalizer = document.querySelector('.equalizer')
 
@@ -46,7 +25,7 @@ $equalizer.addEventListener('mousedown', () =>
         playingMusic = true
     }
 })
-/* End main JS */
+/* End Equalizer */
 
 
 
