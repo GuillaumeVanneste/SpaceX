@@ -452,14 +452,6 @@ header.header
     will-change: transform;
 }
 
-.start-rocket-reactor
-{
-    transform: scale(18.5) rotate(90deg) translate(8vh, 10vw);
-    width: 60px;
-    height: 70px;
-    transform-origin: 50% 50%;
-}
-
 .end-rocket-reactor
 {
     transform: scale(18.5) rotate(90deg) translate(3vh, -5vw);
@@ -671,33 +663,6 @@ canvas {
         transform: rotate(-90deg) translateY(-150%);
     }
 }
-
-
-/*   ROCKET RESPONSIVE   */
-
-/* @media screen and (min-width: 600px) and (max-width: 1000px) {
-    .rocket_container {
-        transform: rotate(90deg) scale(0.5);
-    }
-}
-
-@media screen and (min-width: 400px) and (max-width: 599px) {
-    .rocket_container {
-        transform: rotate(90deg) scale(0.3);
-    }
-}
-
-@media screen and (min-width: 200px) and (max-width: 399px) {
-    .rocket_container {
-        transform: rotate(90deg) scale(0.2);
-    }
-}
-
-@media screen and (min-width: 0px) and (max-width: 199px) {
-    .rocket_container {
-        transform: rotate(90deg) scale(0.1);
-    }
-} */
 
 /* Earth CSS end */
 

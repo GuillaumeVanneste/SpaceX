@@ -262,21 +262,6 @@ document.addEventListener('mousewheel', (event) =>
         },
         1000)
     }
-
-    // Animation for 2nd slide
-    if(changeSlide == 2)
-    {
-        setTimeout(() =>
-        {
-        $rocketReactor.classList.remove('start-rocket-reactor')
-        $rocketReactor.classList.add('end-rocket-reactor')
-        }, 1000)
-    }
-    else
-    {
-        $rocketReactor.classList.remove('end-rocket-reactor')
-        $rocketReactor.classList.add('start-rocket-reactor')
-    }
 })
 
 /* Main page JS */
