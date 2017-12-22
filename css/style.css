@@ -533,7 +533,7 @@ canvas {
 
 .planet.earth.inSlide {
     position: absolute;
-    top: 57vh;
+    top: 38vh;
     z-index: 2;
     left: 54vw;
     border-radius: 100%;
@@ -628,7 +628,7 @@ canvas {
     height: 450px;
     position: absolute;
     top: 20vh;
-    left: 46vw;
+    left: 48vw;
     animation-name: rocket-animation-earth;
     animation-duration: 10s;
     animation-timing-function: ease-in-out;
@@ -654,13 +654,13 @@ canvas {
         transform: rotate(-90deg) scale(0.1) translateX(-60%);
     }
     60% {
-        transform: rotate(-90deg) scale(0.1) translate(15%, -200%);
+        transform: rotate(-90deg) scale(0.1) translate(15%, -240%);
     }
     80% {
-        transform: rotate(-90deg) scale(0.7) translateY(-150%);
+        transform: rotate(-90deg) scale(0.7) translateY(-170%);
     }
     100% {
-        transform: rotate(-90deg) translateY(-150%);
+        transform: rotate(-90deg) translateY(-170%);
     }
 }
 
