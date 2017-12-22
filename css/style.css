@@ -627,7 +627,7 @@ canvas {
     width: 300px;
     height: 450px;
     position: absolute;
-    top: 20vh;
+    top: 30vh;
     left: 48vw;
     animation-name: rocket-animation-earth;
     animation-duration: 10s;
